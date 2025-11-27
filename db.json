@@ -1,0 +1,195 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "System Admin",
+      "email": "admin@lms.com",
+      "password": "123",
+      "role": "admin",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "username": "Dr. Ahmed Khaled",
+      "email": "ahmed@lms.com",
+      "password": "123",
+      "role": "instructor",
+      "bio": "Senior Software Engineer & Angular Expert.",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "username": "Eng. Sarah Nabil",
+      "email": "sarah@lms.com",
+      "password": "123",
+      "role": "instructor",
+      "bio": "Creative UI/UX Designer.",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "username": "Omar Tarek",
+      "email": "omar@student.com",
+      "password": "123",
+      "role": "student",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "username": "Mona Ali",
+      "email": "mona@student.com",
+      "password": "123",
+      "role": "student",
+      "isActive": false
+    },
+    {
+      "id": "6830",
+      "fullname": "hassan said hassan",
+      "email": "seham@gmail.com",
+      "password": "12341234",
+      "role": "Student"
+    },
+    {
+      "id": "6c77",
+      "fullname": "cvcv",
+      "email": "asa@fdf.cvc",
+      "password": "12341234",
+      "role": "Student"
+    },
+    {
+      "id": "c139",
+      "fullname": "mr. best malak",
+      "email": "best@gmail.com",
+      "password": "12341234",
+      "role": "Instructor"
+    },
+    {
+      "id": "47a5",
+      "fullname": "Dr. Mohamed Ahmed",
+      "email": "mohamed@gmail.com",
+      "password": "12341234",
+      "role": "Instructor"
+    },
+    {
+      "id": "d696",
+      "fullname": "cvcv",
+      "email": "cvc@gfgf.com",
+      "password": "21212121",
+      "role": "Instructor"
+    },
+    {
+      "id": "31dc",
+      "fullname": "sas",
+      "email": "xzxzx@gmail.com",
+      "password": "11111111",
+      "role": "Student"
+    },
+    {
+      "id": "4310",
+      "fullname": "sa",
+      "email": "sa@gm.com",
+      "password": "12312312",
+      "role": "Instructor"
+    }
+  ],
+  "courses": [
+    {
+      "id": "101",
+      "title": "Angular 17 Masterclass",
+      "instructorId": 2,
+      "category": "Development",
+      "description": "Learn modern Angular features including Signals and Standalone components.",
+      "image": "https://placehold.co/600x400/dd0031/white?text=Angular+Course",
+      "assignmentTask": "Create a To-Do App using Signals and submit the GitHub link.",
+      "lessons": [
+        {
+          "title": "Introduction to Angular",
+          "url": "https://www.youtube.com/embed/k5E2AVpwsko",
+          "duration": "10:00"
+        },
+        {
+          "title": "Components & Templates",
+          "url": "https://www.youtube.com/embed/5wFC9H-JHLo",
+          "duration": "15:30"
+        }
+      ]
+    },
+    {
+      "id": "102",
+      "title": "UI/UX Design with Figma",
+      "instructorId": 3,
+      "category": "Design",
+      "description": "Design beautiful user interfaces from scratch using Figma.",
+      "image": "https://placehold.co/600x400/a259ff/white?text=Figma+Course",
+      "assignmentTask": "Design a Landing Page for an E-commerce website.",
+      "lessons": [
+        {
+          "title": "Figma Basics",
+          "url": "https://www.youtube.com/embed/FTFaQWZBqQ8",
+          "duration": "12:00"
+        },
+        {
+          "title": "Auto Layout Magic",
+          "url": "https://www.youtube.com/embed/3q3FV65ZrUs",
+          "duration": "20:00"
+        }
+      ]
+    },
+    {
+      "id": "103",
+      "title": "Python for Beginners",
+      "instructorId": 2,
+      "category": "Programming",
+      "description": "Start your coding journey with Python.",
+      "image": "https://placehold.co/600x400/3776ab/white?text=Python+Course",
+      "assignmentTask": "Write a script to calculate the Fibonacci sequence.",
+      "lessons": [
+        {
+          "title": "Python Setup",
+          "url": "https://www.youtube.com/embed/rfscVS0vtbw",
+          "duration": "08:00"
+        }
+      ]
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "501",
+      "studentId": 4,
+      "courseId": 101,
+      "progress": 80,
+      "enrollmentDate": "2023-11-01"
+    },
+    {
+      "id": "502",
+      "studentId": 4,
+      "courseId": 102,
+      "progress": 20,
+      "enrollmentDate": "2023-11-05"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "901",
+      "courseId": 101,
+      "studentId": 4,
+      "studentName": "Omar Tarek",
+      "submissionDate": "2023-11-10",
+      "answer": "https://github.com/omar/angular-todo",
+      "status": "graded",
+      "grade": 95,
+      "feedback": "Great job! Clean code."
+    },
+    {
+      "id": "902",
+      "courseId": 102,
+      "studentId": 4,
+      "studentName": "Omar Tarek",
+      "submissionDate": "2023-11-12",
+      "answer": "https://figma.com/file/xyz...",
+      "status": "pending",
+      "grade": null,
+      "feedback": ""
+    }
+  ]
+}

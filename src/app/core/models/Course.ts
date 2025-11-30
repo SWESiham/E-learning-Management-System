@@ -1,14 +1,17 @@
 import { assignment } from "./assignment";
+import { Lecture } from "./Material";
 export interface Course{
-    _id:string,
+   
   title:string,
   description:string,
-  author:string,
+  authorName:string,
+  authorId:string,
   price:number,
   hours:number,
   category:string,
-  Material:string[],
+  Material:Lecture[],
     imageUrl:string,
-    assignments: assignment[]
+    assignments: assignment[],
+    learningObjectives: string[]
 
 }

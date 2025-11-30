@@ -25,6 +25,7 @@ export class Auth {
   }
 
   getToken() {
+    console.log("token", localStorage.getItem('token'));
     return localStorage.getItem('token');
   }
   loginUser(email: string){
@@ -36,6 +37,7 @@ export class Auth {
     if (token) {
       // header.payload.signature
       const userPayload = atob(token.split('.')[1]);
+      console.log(userPayload);
       return JSON.parse(userPayload);
     }
     return null;

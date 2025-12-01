@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Navbar } from './components/navbar/navbar';
-import { Footer } from './components/footer/footer';
+import { Footer } from '../modules/home/components/footer/footer';
 
 @NgModule({
   declarations: [

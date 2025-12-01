@@ -5,14 +5,14 @@ import { Users } from '../models/users';
 @Injectable({
   providedIn: 'root',
 })
-export class Auth {     
+export class Auth {
   constructor(private _http: HttpClient) { };
   apiURL = 'http://localhost:3000/users';
   addUser(user: Users) {
-    return this._http.post(this.apiURL,user);
+    return this._http.post(this.apiURL, user);
   }
   getUserById(_id: string) {
-    return this._http.get(this.apiURL+_id);
+    return this._http.get(this.apiURL + _id);
   }
 
   saveToken(user: Users) {
@@ -27,7 +27,7 @@ export class Auth {
   getToken() {
     return localStorage.getItem('token');
   }
-  loginUser(email: string){
+  loginUser(email: string) {
     return this._http.get(`${this.apiURL}?email=${email}`);
   }
 

@@ -1,0 +1,69 @@
+<div class="container py-4" *ngIf="courseData">
+
+    <a routerLink="/student/my-courses" class="text-decoration-none text-secondary mb-3 d-inline-block">
+        <i class="bi bi-arrow-left"></i> Back
+    </a>
+
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="bg-dark rounded-top position-relative" style="height: 300px;">
+            <img [src]="courseData.imageUrl" class="w-100 h-100 object-fit-cover opacity-50" alt="Video Placeholder">
+            <button class="btn btn-primary rounded-circle position-absolute top-50 start-50 translate-middle p-3">
+                <i class="bi bi-play-fill fs-1"></i>
+            </button>
+        </div>
+
+        <div class="card-body p-4">
+            <h2 class="fw-bold">{{ courseData.title }}</h2>
+            <p class="text-muted">{{ courseData.instructor }}</p>
+            <div class="d-flex gap-3 text-secondary small">
+                <span><i class="bi bi-clock"></i> {{ courseData.totalLessons }} Lessons</span>
+                <span><i class="bi bi-trophy"></i> {{ courseData.progress }}% Completed</span>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs mb-4">
+        <li class="nav-item">
+            <button class="nav-link" [class.active]="activeTab === 'content'" (click)="setActiveTab('content')">
+                Course Content
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" [class.active]="activeTab === 'assignment'" (click)="setActiveTab('assignment')">
+                Assignments
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" [class.active]="activeTab === 'resources'" (click)="setActiveTab('resources')">
+                Resources
+            </button>
+        </li>
+    </ul>
+
+    <div *ngIf="activeTab === 'content'">
+        <div class="alert alert-light border">
+            <h5>📺 Course Content</h5>
+            <p>Content for <strong>{{ courseData.title }}</strong> goes here.</p>
+        </div>
+    </div>
+
+    <div *ngIf="activeTab === 'assignment'">
+        <div class="alert alert-light border">
+            <h5>📝 Assignments</h5>
+            <p>Quizzes for <strong>{{ courseData.title }}</strong> go here.</p>
+        </div>
+    </div>
+
+    <div *ngIf="activeTab === 'resources'">
+        <div class="alert alert-light border">
+            <h5>📚 Resources</h5>
+            <p>Files for <strong>{{ courseData.title }}</strong> go here.</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container py-5 text-center" *ngIf="!courseData">
+    <h3 class="text-danger">Course not found!</h3>
+    <a routerLink="/student/my-courses" class="btn btn-secondary mt-3">Go Back</a>
+</div>

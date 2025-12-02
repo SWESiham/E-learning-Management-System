@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from '../modules/home/components/footer/footer';
 
@@ -10,7 +10,8 @@ import { Footer } from '../modules/home/components/footer/footer';
     Footer
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     Navbar,

@@ -9,7 +9,11 @@ const routes: Routes = [
   {
     path: 'course',
     loadChildren: () => import('./modules/course/course-module').then(m => m.CourseModule)
+  },
+  { 
+    path: 'assignment', loadChildren: () => import('./modules/assignment/assignment-module').then(m => m.AssignmentModule) 
   }
+
 ];
 
 @NgModule({

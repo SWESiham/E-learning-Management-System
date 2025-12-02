@@ -1,0 +1,24 @@
+<div class="container py-5">
+    <!-- // المفروض انه يرجع للصفحة اللى جه منها ب ال id -->
+    <a routerLink="" class="text-decoration-none text-secondary mb-3 d-inline-block">
+        ← Back to Course
+    </a>
+    <div class="card shadow-lg p-5 mx-auto" style="max-width: 500px;">
+
+        <h3 class="fw-bold mb-4 text-center">{{ assignmentTitle }}</h3>
+
+        <div class="list-group list-group-flush mb-4">
+            <div class="list-group-item d-flex justify-content-between">
+                <span class="text-muted"><i class="bi bi-patch-check me-2 text-success"></i>Total Points: {{ totalPoints
+                    }}</span>
+            </div>
+            <div class="list-group-item d-flex justify-content-between">
+                <span class="text-muted"><i class="bi bi-question-circle me-2 text-primary"></i>Questions: {{
+                    questionCount }}</span>
+            </div>
+        </div>
+
+        <a [routerLink]="['/student/assignment/quiz', assignmentId]" class="btn btn-primary btn-lg mt-3">Start
+            Assignment</a>
+    </div>
+</div>

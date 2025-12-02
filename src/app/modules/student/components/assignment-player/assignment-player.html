@@ -1,1 +1,38 @@
-<p>assignment-player works!</p>
+<div class="container py-5" style="max-width: 800px;">
+    <a routerLink="" class="text-decoration-none text-secondary mb-3 d-inline-block">
+        ← Back to Course
+    </a>
+
+    <form [formGroup]="quizForm" (ngSubmit)="submitQuiz()">
+        <h3 class="fw-bold mb-4">React Fundamentals Assignment</h3>
+
+        <div class="card shadow-sm p-4 mb-4" *ngFor="let q of questions; let i = index">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6 class="text-primary mb-0">Question {{ i + 1 }}</h6>
+                <span class="badge bg-primary-subtle text-primary">{{ q.points }} points</span>
+            </div>
+
+            <p class="fw-bold">{{ q.text }}</p>
+
+            <div *ngIf="q.type === 'mcq'" class="list-group">
+                <label *ngFor="let option of q.options" class="list-group-item">
+                    <input class="form-check-input me-3" type="radio" [formControlName]="'q_' + q.id" [value]="option">
+                    {{ option }}
+                </label>
+            </div>
+
+            <div *ngIf="q.type === 'essay'">
+                <textarea class="form-control" rows="4" placeholder="Type your answer here..."
+                    [formControlName]="'q_' + q.id"></textarea>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <button type="submit" class="btn btn-success btn-lg w-50" [disabled]="!quizForm.valid">
+                <i class="bi bi-check-circle-fill me-2"></i> Submit Quiz
+            </button>
+        </div>
+    </form>
+</div>

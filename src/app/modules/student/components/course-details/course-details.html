@@ -40,24 +40,18 @@
         </li>
     </ul>
 
-    <div *ngIf="activeTab === 'content'">
-        <div class="alert alert-light border">
-            <h5>📺 Course Content</h5>
-            <p>Content for <strong>{{ courseData.title }}</strong> goes here.</p>
-        </div>
-    </div>
+    <div class="tab-content">
 
-    <div *ngIf="activeTab === 'assignment'">
-        <div class="alert alert-light border">
-            <h5>📝 Assignments</h5>
-            <p>Quizzes for <strong>{{ courseData.title }}</strong> go here.</p>
+        <div *ngIf="activeTab === 'content'">
+            <app-course-content></app-course-content>
         </div>
-    </div>
 
-    <div *ngIf="activeTab === 'resources'">
-        <div class="alert alert-light border">
-            <h5>📚 Resources</h5>
-            <p>Files for <strong>{{ courseData.title }}</strong> go here.</p>
+        <div *ngIf="activeTab === 'assignment'">
+            <app-assignment-list></app-assignment-list>
+        </div>
+
+        <div *ngIf="activeTab === 'resources'">
+            <app-course-resources></app-course-resources>
         </div>
     </div>
 

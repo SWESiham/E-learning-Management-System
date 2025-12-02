@@ -3,5 +3,6 @@ export interface Submition{
     courseId: string,
     submissionDate: Date,
     feedback: string,
-    grade: number
+    grade: number,
+    submissionLink: string
 }

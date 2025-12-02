@@ -94,62 +94,204 @@
   ],
   "courses": [
     {
-      "id": "101",
-      "title": "Angular 17 Masterclass",
-      "instructorId": 2,
-      "category": "Development",
-      "description": "Learn modern Angular features including Signals and Standalone components.",
-      "image": "https://placehold.co/600x400/dd0031/white?text=Angular+Course",
-      "assignmentTask": "Create a To-Do App using Signals and submit the GitHub link.",
-      "lessons": [
-        {
-          "title": "Introduction to Angular",
-          "url": "https://www.youtube.com/embed/k5E2AVpwsko",
-          "duration": "10:00"
-        },
-        {
-          "title": "Components & Templates",
-          "url": "https://www.youtube.com/embed/5wFC9H-JHLo",
-          "duration": "15:30"
-        }
-      ]
+      "title": "python1",
+      "description": "python python pythontrterewfwef",
+      "authorName": {
+        "value": "Dr. Ahmed Khaled"
+      },
+      "authorId": {
+        "value": "2"
+      },
+      "price": 10,
+      "hours": 10,
+      "category": "Machine Learning",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "tcx",
+          "lnu"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "xxxyreyioryweihfsdh",
+            "duration": 3,
+            "link": "http",
+            "status": false
+          },
+          {
+            "title": "tokd",
+            "duration": 1,
+            "link": "eeeee",
+            "status": false
+          }
+        ]
+      },
+      "assignments": [],
+      "id": "e386"
     },
     {
-      "id": "102",
-      "title": "UI/UX Design with Figma",
-      "instructorId": 3,
-      "category": "Design",
-      "description": "Design beautiful user interfaces from scratch using Figma.",
-      "image": "https://placehold.co/600x400/a259ff/white?text=Figma+Course",
-      "assignmentTask": "Design a Landing Page for an E-commerce website.",
-      "lessons": [
-        {
-          "title": "Figma Basics",
-          "url": "https://www.youtube.com/embed/FTFaQWZBqQ8",
-          "duration": "12:00"
-        },
-        {
-          "title": "Auto Layout Magic",
-          "url": "https://www.youtube.com/embed/3q3FV65ZrUs",
-          "duration": "20:00"
-        }
-      ]
+      "id": "6f81",
+      "title": "Frontend",
+      "description": "Frontend Frontend Frontend",
+      "authorName": {
+        "value": "Dr. Ahmed Khaled"
+      },
+      "authorId": {
+        "value": "2"
+      },
+      "price": 3,
+      "hours": 10,
+      "category": "Web Development",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "basics",
+          "laern "
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 10,
+            "link": "http",
+            "status": false
+          },
+          {
+            "title": "intro2",
+            "duration": 13,
+            "link": "http",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
     },
     {
-      "id": "103",
-      "title": "Python for Beginners",
-      "instructorId": 2,
-      "category": "Programming",
-      "description": "Start your coding journey with Python.",
-      "image": "https://placehold.co/600x400/3776ab/white?text=Python+Course",
-      "assignmentTask": "Write a script to calculate the Fibonacci sequence.",
-      "lessons": [
-        {
-          "title": "Python Setup",
-          "url": "https://www.youtube.com/embed/rfscVS0vtbw",
-          "duration": "08:00"
-        }
-      ]
+      "id": "567d",
+      "title": "play",
+      "description": "plaundklsdas",
+      "authorName": {
+        "value": "Dr. Ahmed Khaled"
+      },
+      "authorId": {
+        "value": "2"
+      },
+      "price": 10,
+      "hours": 10,
+      "category": "Other",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "triewlh"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "hflkashl",
+            "duration": 3,
+            "link": "shdlksa",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "9861",
+      "title": "ccccccc",
+      "description": "ccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "authorName": {
+        "value": "Dr. Ahmed Khaled"
+      },
+      "authorId": {
+        "value": "2"
+      },
+      "price": 2,
+      "hours": 1,
+      "category": "Data Science",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "2wwwwwwwwwww"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "wwwwwwww",
+            "duration": 10,
+            "link": "eeeeeeee",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "1636",
+      "title": "trkef",
+      "description": "gdkak",
+      "authorName": {
+        "value": "Dr. Ahmed Khaled"
+      },
+      "authorId": {
+        "value": "2"
+      },
+      "price": 8,
+      "hours": 29,
+      "category": "Mobile Development",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "sssssssss"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "rtsjd",
+            "duration": 10,
+            "link": "kkdak",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "16ed",
+      "title": "qs",
+      "description": "qqqqqqq",
+      "authorName": {
+        "value": "Dr. Ahmed Khaled"
+      },
+      "authorId": {
+        "value": "2"
+      },
+      "price": 2,
+      "hours": 2,
+      "category": "Web Development",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "tokadnmsndmq"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "rts,",
+            "duration": 10,
+            "link": "tdnk",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
     }
   ],
   "enrollments": [

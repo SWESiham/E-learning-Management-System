@@ -1,0 +1,46 @@
+.add_course
+{
+    background-color: #f9fafb;
+    padding-bottom: 50px;
+}
+.add_course_cont
+{
+    padding-top: 50px;
+    width: 70%;
+    margin: 0 15%;
+
+}
+.form
+{
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 30px;
+}
+.form-label {
+            color: #495057;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+.card {
+            border: 1px solid #e9ecef;
+            border-radius: 12px; /* Slightly more rounded corners */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      }
+.section-title {
+            color: black; 
+            font-weight: 500;
+        }
+ textarea {
+            resize: vertical;
+        }
+.form-control:focus,
+.form-select:focus,
+.input-group:has(.form-select:focus)
+
+{
+    border-color: #3485ff;
+    border-width: 2px;
+    outline: none ;
+    box-shadow: none;
+}

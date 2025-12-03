@@ -13,12 +13,15 @@ export class GetInstructorCourses {
   constructor(private _auth: Auth, private _course: ApiCourse,private _router: Router) { }
   courses: any[] = [];
   instructorName:string='';
+  assignments: any[] =[];
   ngOnInit() {
-    const getUserPayload = this._auth.getUserPayload();
+    var getUserPayload = this._auth.getUserPayload();
     this.instructorName=getUserPayload.username
+
     if(getUserPayload&&this._auth.isLoggedInWithRole('instructor')){
-    this._course.getCousreByInstructorId(getUserPayload.id).subscribe((res: any) => {
+      this._course.getCousreByInstructorId(getUserPayload.id).subscribe((res: any) => {
       this.courses = res;
+      
       console.log("this.courses", this.courses);
       
     })

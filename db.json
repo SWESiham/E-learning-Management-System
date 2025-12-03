@@ -128,7 +128,7 @@
           }
         ]
       },
-      "assignments": [],
+      "assignments": ["301"],
       "id": "e386"
     },
     {
@@ -332,6 +332,59 @@
       "status": "pending",
       "grade": null,
       "feedback": ""
+    }
+  ],
+  "assignments": [
+    {
+      "id": "301",
+      "courseId": "e386",
+      "title": "Introduction to Python",
+      "description": "Write a Python script to calculate the factorial of a number.",
+      "dueDate": "2025-12-10",
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+
+    },
+    {
+      "id": "302",
+      "courseId": "6f81",
+      "title": "Frontend Basics",
+      "description": "Create a simple HTML and CSS page with a responsive layout.",
+      "dueDate": "2025-12-15",
+      "assignmentLink":"https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+    },
+    {
+      "id": "303",
+      "courseId": "567d",
+      "title": "Playground Project",
+      "description": "Build a small project using any programming language of your choice.",
+      "dueDate": "2025-12-20",
+      "assignmentLink":"https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+
+    },
+    {
+      "id": "304",
+      "courseId": "9861",
+      "title": "Data Science Basics",
+      "description": "Analyze a dataset and create a visualization using Python or R.",
+      "dueDate": "2025-12-25",
+      "assignmentLink":"https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+
+    },
+    {
+      "id": "305",
+      "courseId": "1636",
+      "title": "Mobile App Design",
+      "description": "Design a wireframe for a mobile app using Figma.",
+      "dueDate": "2025-12-30",
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+    },
+    {
+      "id": "306",
+      "courseId": "16ed",
+      "title": "Web Development Project",
+      "description": "Build a simple web application using Angular.",
+      "dueDate": "2026-01-05",
+      "assignmentLink":"https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
     }
   ]
 }

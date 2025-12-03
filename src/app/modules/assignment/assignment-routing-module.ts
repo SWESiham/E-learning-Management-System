@@ -6,9 +6,7 @@ import { DeleteAssignment } from './delete-assignment/delete-assignment';
 import { SubmitAssignment } from './submit-assignment/submit-assignment';
 import { ViewSubmition } from './view-submition/view-submition';
 import { GradeAssignment } from './grade-assignment/grade-assignment';
-import { InstructorAssignment } from './instructor-assignment/instructor-assignment';
 const routes: Routes = [
-  { path: 'course/:id/assignments/', component: InstructorAssignment },
   
 ];
 

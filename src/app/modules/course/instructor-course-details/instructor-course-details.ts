@@ -18,20 +18,18 @@ export class InstructorCourseDetails {
     const payload= this._auth.getUserPayload()
      this._apiCourse.getCourse(id!).subscribe((res) => {
       this.course = res;
+      if(payload&&this._auth.isLoggedInWithRole('instructor')){
+        if(this.course.authorId.value==payload.id){
+          this.role="instructor"
+        }
+
+  }
+      else if(payload&&this._auth.isLoggedInWithRole('student')){
+        if(payload.courses.includes(this.course.id)){
+          this.role="student"
+        }
+   
+  }
     });
-    if(payload&&this._auth.isLoggedInWithRole('instructor')){
-      if(this.course.authorId==payload.id){
-        this.role="instructor"
-      }
-
-   
-  }
-    else if(payload&&this._auth.isLoggedInWithRole('student')){
-      if(payload.courses.includes(this.course.id)){
-        this.role="student"
-      }
-
-   
-  }
 }
 }

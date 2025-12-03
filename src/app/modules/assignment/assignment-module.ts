@@ -26,6 +26,9 @@ import { InstructorAssignment } from './instructor-assignment/instructor-assignm
   imports: [
     CommonModule,
     AssignmentRoutingModule
+  ],
+  exports: [
+    InstructorAssignment
   ]
 })
 export class AssignmentModule { }

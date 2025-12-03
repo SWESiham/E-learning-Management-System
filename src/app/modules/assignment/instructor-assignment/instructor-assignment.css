@@ -1,0 +1,17 @@
+.assignments-container {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.list-group-item h5 {
+  font-weight: 600;
+}
+
+.list-group-item p {
+  margin: 0;
+}

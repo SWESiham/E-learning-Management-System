@@ -8,6 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { GetInstructorCourses } from './get-instructor-courses/get-instructor-courses';
 import { CatalogCourses } from './catalog-courses/catalog-courses';
 import { InstructorCourseDetails } from './instructor-course-details/instructor-course-details';
+import { AssignmentModule } from '../assignment/assignment-module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InstructorCourseDetails } from './instructor-course-details/instructor-
     CourseRoutingModule,
     FormsModule,
     ToastrModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AssignmentModule
   ]
 })
 export class CourseModule { }

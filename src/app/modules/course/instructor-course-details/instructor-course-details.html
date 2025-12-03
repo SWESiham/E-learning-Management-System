@@ -20,9 +20,11 @@
 
                 <ul class="nav nav-tabs custom-tabs mb-4">
                     <li class="nav-item"><a class="nav-link active" href="#">Content</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Assignments</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['assignments']">Assignments</a>
+                    </li>
                 </ul>
-
+                <router-outlet></router-outlet>
                 <div class="module-card">
                     
                     <ul class="list-group list-group-flush">

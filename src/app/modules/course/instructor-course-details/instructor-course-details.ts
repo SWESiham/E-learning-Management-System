@@ -18,6 +18,7 @@ export class InstructorCourseDetails {
     const payload= this._auth.getUserPayload()
      this._apiCourse.getCourse(id!).subscribe((res) => {
       this.course = res;
+      console.log('Course object:', this.course.id); 
       if(payload&&this._auth.isLoggedInWithRole('instructor')){
         if(this.course.authorId.value==payload.id){
           this.role="instructor"

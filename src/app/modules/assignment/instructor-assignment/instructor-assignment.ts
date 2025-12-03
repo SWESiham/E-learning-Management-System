@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiAssignment } from '../api-assignment';
 import { assignment } from '../../../core/models/assignment';
@@ -10,13 +10,16 @@ import { assignment } from '../../../core/models/assignment';
   styleUrl: './instructor-assignment.css',
 })
 export class InstructorAssignment implements OnInit {
-  assignments: assignment[] = [];
+  @Input() 
   courseId: string | null = null;
+  assignments: assignment[] = [];
 
     constructor(private route: ActivatedRoute, private apiAssignment: ApiAssignment) {}
 
   ngOnInit(): void {
-    this.courseId = this.route.parent!.snapshot.paramMap.get('id');
+    if (!this.courseId) {
+      this.courseId = this.route.parent?.snapshot.paramMap.get('id') ?? null;
+    }
     console.log('Course ID:', this.courseId);
 
     if (this.courseId) {

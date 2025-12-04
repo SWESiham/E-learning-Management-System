@@ -20,7 +20,7 @@ export class CreateCourse {
   authorId: string = "0";
   coursesCount: number = 0;
 
-constructor(private _course: ApiCourse, private _auth: Auth,private _formBuilder: FormBuilder,private _router: Router) {
+constructor(private toastr: ToastrService,private _course: ApiCourse, private _auth: Auth,private _formBuilder: FormBuilder,private _router: Router) {
  
 }
   userPayload:any
@@ -58,25 +58,45 @@ constructor(private _course: ApiCourse, private _auth: Auth,private _formBuilder
     return index;
   }
 
+   checkNotEmpty(): boolean {
+    let flag=true
+  this.lectures.forEach((lecture: any) => {
+    if (lecture.title==="" || lecture.duration===0 || lecture.link==="") {
+      flag=false
+      return;
+    }
+  });
+  if(flag)
+  {
+    
+  }
+  else{
 
+  this.learningObjectives.forEach((l: any) => {
+    if (l==="") {
+      flag=false
+      return ;
+    }
+  });}
+  return flag
+}
    createCourse() {
     console.log("this.courseForm.value", this.courseForm.value);
-    if (this.courseForm.invalid) {
-     
-     alert('All information is required');
+    if (this.courseForm.invalid || !this.checkNotEmpty()) {
+      console.log("invalid errororo")
+     this.showToast('warning', 'All information is required');
     return;
   }
   else if(this.authorId==="0"){
-    alert('Unauthorized Access');
-    console.log("Unauthorized Access");
+    console.log("errororo")
+   this._router.navigate(['course/catlogCourses']);
     return
   }
   const data = this.courseForm.value;
    this._course.saveCourse(data).subscribe(
    (res: any) => {
       
-      alert("Course Created Successfully");
-      console.log(res);
+     this.showToast('success', 'Course Created Successfully');
       this.navigateToCourses()
       
     },
@@ -89,27 +109,77 @@ constructor(private _course: ApiCourse, private _auth: Auth,private _formBuilder
   
  }
  navigateToCourses() {
- this._router.navigate(['course/']);
+ this._router.navigate(['course/instructorCourses']);
 }
- ngOnInit(): void {
-   const payload= this._auth.getUserPayload()
-      if(payload&&this._auth.isLoggedInWithRole('instructor')){
-        this.authorName = payload.username;
-        this.authorId = payload.id;
-        this.courseForm = this._formBuilder.group({
-          title: ['', Validators.required],
-          description: ['', Validators.required],
-          authorName: [{ value: this.authorName }],
-          authorId: [{ value: this.authorId }],
-          price: ['', Validators.required],
-          hours: ['', Validators.required],
-          category: ['', Validators.required],
-          imageUrl: ['placeholder.png'],
-          learningObjectives:  [{ value: this.learningObjectives }],
-          Material: [{ value: this.lectures }],
-          assignments: this._formBuilder.array([])
-        });
-      }
+//  ngOnInit(): void {
+//    const payload= this._auth.getUserPayload()
+//       if(payload&&this._auth.isLoggedInWithRole('instructor')){
+//         this.authorName = payload.username;
+//         this.authorId = payload.id;
+//         this.courseForm = this._formBuilder.group({
+//           title: ['', Validators.required],
+//           description: ['', Validators.required],
+//           authorName: [{ value: this.authorName }],
+//           authorId: [{ value: this.authorId }],
+//           price: ['', Validators.required],
+//           hours: ['', Validators.required],
+//           category: ['', Validators.required],
+//           imageUrl: ['placeholder.png'],
+//           learningObjectives:  [{ value: this.learningObjectives }],
+//           Material: [{ value: this.lectures }],
+//           assignments: this._formBuilder.array([])
+//         });
+//       }
      
+//   }
+// inside create-course.ts
+
+ngOnInit(): void {
+  // 1. Initialize the form structure immediately with empty/default values
+  this.courseForm = this._formBuilder.group({
+    title: ['', Validators.required],
+    description: ['', Validators.required],
+    authorName: [''], // Default empty
+    authorId: [''],   // Default empty
+    price: ['', Validators.required],
+    hours: ['', Validators.required],
+    category: ['', Validators.required],
+    imageUrl: ['placeholder.png'],
+    learningObjectives:[{ value: this.learningObjectives }], 
+    Material: [{ value: this.lectures }],
+    assignments: this._formBuilder.array([])
+  });
+
+  // 2. Check logic and fill in the data
+  const payload = this._auth.getUserPayload();
+  
+  if (payload && this._auth.isLoggedInWithRole('Instructor')) {
+    this.authorName = payload.fullname;
+    this.authorId = payload.id;
+
+    // Use patchValue to update only specific fields safely
+    this.courseForm.patchValue({
+      authorName: this.authorName,
+      authorId: this.authorId,
+      // If you have existing data for objectives/material, patch them here too
+    });
+    console.log("this.authorName", this.authorName);
+    console.log("this.authorId", this.authorId);
+    console.log("this.courseForm.value", this.courseForm.value);
+  }
+}
+  showToast(type: any, message: any) {
+    this.toastr.show(
+      '<span data-notify="icon" class="nc-icon nc-bell-55"></span><span data-notify="message">' +
+        message +
+        '</span>',
+      '',
+      {
+        timeOut: 4000,
+        enableHtml: true,
+        toastClass: 'alert alert-' + type + ' alert-with-icon',
+        positionClass: 'toast-bottom-center',
+      }
+    );
   }
 }

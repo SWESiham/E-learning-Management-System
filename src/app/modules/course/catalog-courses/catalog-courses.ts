@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Auth } from '../../../core/services/auth';
 import { ApiCourse } from '../api-course';
 import { categories } from '../../../core/models/categories';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-catalog-courses',
@@ -38,6 +39,7 @@ export class CatalogCourses {
     })
   }
 }
+
  searchCourses() {
   this._apiCourse.getCourses().subscribe((res: any) => {
     this.courses = res.filter((course: any) => course.title.toLowerCase().includes(this.searchCourse.toLowerCase()));

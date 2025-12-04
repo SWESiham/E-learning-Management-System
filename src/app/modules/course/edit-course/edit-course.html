@@ -1,0 +1,199 @@
+<div class="add_course">
+    <div class="add_course_cont">
+<div class=" mt-5">
+            <h2 class="text-navy fw-normal mb-1">Create New Course</h2>
+            
+            <p class="text-secondary fs-5">Set up your course details and curriculum</p>
+        </div>
+    <div class="mt-5 w-100">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 w-100">
+                
+                <div class="card p-4 bg-white">
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-book me-2 fs-5 text-primary"></i>
+                        <h5 class="mb-0 section-title">Basic Information</h5>
+                    </div>
+
+                    <form  [formGroup]="courseForm" (ngSubmit)="editCourse()">
+                        <div class="mb-3">
+                            <label class="form-label" >Course Title <span class="text-danger">*</span></label>
+                            <input type="text" formControlName="title" name="title" class="form-control" placeholder="e.g., Complete Web Development Bootcamp">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Course Description <span class="text-danger">*</span></label>
+                            <textarea formControlName="description" name="description" class="form-control" rows="4" placeholder="Provide a detailed description of what students will learn..."></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Category <span class="text-danger">*</span></label>
+                            <select class="form-select" formControlName="category" name="category">
+
+                                <option selected disabled>Select a category</option>
+                                 <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+
+                                
+                            </select>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Course Hours <span class="text-danger">*</span></label>
+                                <input type="number" formControlName="hours" name="hours" class="form-control" placeholder="e.g. 24">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Price <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" name="price" formControlName="price" class="form-control" placeholder="0.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <img [src]="courseForm.value.imageUrl"  alt="Course Image"  class="img-thumbnail ">
+                        </div>
+                         <div class="mb-3 mt-5">
+                            <label class="form-label">Course Image Link <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white text-secondary">
+                                    <i class="bi bi-link-45deg"></i>
+                                </span>
+                                <input type="url" name="imageUrl" class="form-control" formControlName="imageUrl" placeholder="https://example.com/course-thumbnail.jpg">
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+  
+  <div class="card shadow-sm border-1">
+    <div class="card-body p-4">
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        
+        <h5 class="card-title mb-0 text-dark">
+          <i class="bi bi-bookmark text-primary me-2"></i> 
+          Learning Objectives
+        </h5>
+
+        <button 
+          type="button" 
+          class="btn btn-link text-decoration-none fw-bold text-primary" 
+          (click)="addObjective()">
+          + Add Objective
+        </button>
+
+      </div>
+
+      <div *ngFor="let obj of learningObjectives; let i = index; trackBy: trackByIndex">
+        
+        <div class="d-flex align-items-center mb-2">
+          
+          <span class="text-primary me-3 fw-bold fs-5">✓</span>
+
+          <input 
+            type="text" 
+            class="form-control py-2" 
+            placeholder="What will students learn?"
+            [(ngModel)]="learningObjectives[i]" 
+            name="objective_{{i}}">
+
+          <button 
+            *ngIf="learningObjectives.length > 1"
+            type="button" 
+            class="btn btn-link text-danger ms-2 text-decoration-none fs-5 p-0" 
+            (click)="removeObjective(i)">
+            &times;
+          </button>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+
+    </div>
+  <div class="container mt-4">
+    <div class="container mt-4">
+  <div class="card shadow-sm border-1">
+    <div class="card-body p-4">
+
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5 class="card-title mb-0 text-dark">
+          <i class="bi bi-camera-video text-primary me-2"></i>
+          Course Lectures
+        </h5>
+        <button 
+          type="button" 
+          class="btn btn-sm btn-outline-primary fw-bold" 
+          (click)="addLecture()">
+          + Add Lecture
+        </button>
+      </div>
+
+      <div *ngFor="let lecture of lectures; let i = index; trackBy: trackByIndex" class="mb-3 border-bottom pb-3">
+        
+        <h6 class="text-secondary mb-2">Lecture {{ i + 1 }}</h6>
+
+        <div class="row g-2 align-items-end">
+          
+          <div class="col-md-5">
+            <label class="form-label small text-muted">Title</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="e.g., Intro to Angular"
+              [(ngModel)]="lectures[i].title"
+              name="title_{{i}}">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label small text-muted">Video Link</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="https://..."
+              [(ngModel)]="lectures[i].link"
+              name="link_{{i}}">
+          </div>
+
+          <div class="col-md-2">
+            <label class="form-label small text-muted">Mins</label>
+            <input 
+              type="number" 
+              class="form-control" 
+              placeholder="0"
+              [(ngModel)]="lectures[i].duration"
+              name="duration_{{i}}">
+          </div>
+
+          <div class="col-md-1 text-end">
+             <button 
+              *ngIf="lectures.length > 1"
+              type="button" 
+              class="btn btn-link text-danger text-decoration-none" 
+              (click)="removeLecture(i)"
+              title="Remove Lecture">
+              <i class="bi bi-trash"></i> &times;
+            </button>
+          </div>
+
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+    <button type="submit" class="btn btn-primary w-75" (click)="editCourse()">Edit Course</button>
+  </div>
+</div>
+</div>
+
+

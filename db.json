@@ -109,7 +109,8 @@
       "learningObjectives": {
         "value": [
           "tcx",
-          "lnu"
+          "lnu",
+          "expert"
         ]
       },
       "Material": {
@@ -125,12 +126,16 @@
             "duration": 1,
             "link": "eeeee",
             "status": false
+          },
+          {
+            "title": "scripting",
+            "duration": 30,
+            "link": "script",
+            "status": false
           }
         ]
       },
-      "assignments": [
-        "301"
-      ],
+      "assignments": [],
       "id": "e386"
     },
     {
@@ -341,14 +346,6 @@
   ],
   "assignments": [
     {
-      "id": "302",
-      "courseId": "e386",
-      "title": "Frontend Basics",
-      "description": "Create a simple HTML and CSS page with a responsive layout.",
-      "dueDate": "2025-12-15",
-      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
-    },
-    {
       "id": "303",
       "courseId": "e386",
       "title": "Playground Project",
@@ -379,6 +376,14 @@
       "description": "Build a simple web application using Angular.",
       "dueDate": "2026-01-05",
       "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+    },
+    {
+      "id": "m6a09siztgo1u2npht2jh7i",
+      "courseId": "e386",
+      "title": "build script to compress images",
+      "description": "script",
+      "assignmentLink": "script",
+      "dueDate": "2026-01-10"
     }
   ]
 }

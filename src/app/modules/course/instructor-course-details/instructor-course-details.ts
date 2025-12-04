@@ -25,9 +25,8 @@ export class InstructorCourseDetails implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.payload = this._auth.getUserPayload();
-
-    if (id) {
-      this._apiCourse.getCourse(id).subscribe({
+    
+      this._apiCourse.getCourse(id!).subscribe({
         next: (res: any) => {
           this.course = res;
           console.log("Course loaded:", this.course);
@@ -43,7 +42,6 @@ export class InstructorCourseDetails implements OnInit {
           this._router.navigate(['/auth/login']); 
         }
       });
-    }
     
     if (this._router.url.includes('assignments')) {
       this.activebutton = false;

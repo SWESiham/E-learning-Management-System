@@ -11,10 +11,11 @@ const routes: Routes = [
   { path: '', redirectTo: 'courses', pathMatch: 'full' },
 
   { path: 'create', component: CreateCourse },
-  { path: 'courses', component: GetInstructorCourses },
-  { path: 'courses/:id', component: InstructorCourseDetails, children: [{ path: 'assignments', component: InstructorAssignment }]},
+
+  { path: 'instructorCourses', component: GetInstructorCourses },
+  { path: 'instructorCourses/:id', component: InstructorCourseDetails, children: [{ path: 'assignments', component: InstructorAssignment }]},
   { path: 'catalogCourses', component: CatalogCourses },
-  { path: 'edit/:id', component: EditCourse },
+  { path: 'instructorCourses/edit/:id', component: EditCourse },
 ];
 
 @NgModule({

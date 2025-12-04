@@ -23,7 +23,9 @@ export class ApiCourse {
     return this.http.get(this.apiURL);
   }
   getCousreByInstructorId(id: string) {
-    return this.http.get(`${this.apiURL}?authorId=${id}`);
+    const courses=this.getCourses().pipe(map((res: any) => res.filter((course: any) => course.authorId === id)));
+    console.log("APIcourses", courses);
+    return courses
   }
   editCourse(id: string, course: any) {
     return this.http.patch(`${this.apiURL}/${id}`, course);

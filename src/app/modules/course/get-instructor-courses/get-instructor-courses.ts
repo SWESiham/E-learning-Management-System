@@ -14,11 +14,10 @@ export class GetInstructorCourses {
   courses: any[] = [];
   instructorName:string='';
   ngOnInit() {
-    var getUserPayload = this._auth.getUserPayload();
-    this.instructorName=getUserPayload.username
-
-    if(getUserPayload&&this._auth.isLoggedInWithRole('instructor')){
-      this._course.getCousreByInstructorId(getUserPayload.id).subscribe((res: any) => {
+    const getUserPayload = this._auth.getUserPayload();
+    this.instructorName=getUserPayload.fullname
+    if(getUserPayload&&this._auth.isLoggedInWithRole('Instructor')){
+    this._course.getCousreByInstructorId(getUserPayload.id).subscribe((res: any) => {
       this.courses = res;
       
       console.log("this.courses", this.courses);
@@ -31,9 +30,9 @@ export class GetInstructorCourses {
   
     this._router.navigate(['course/create']);
   }
-  navigateToCourseDetails(courseId: any) {
-    console.log("TO COURSE", courseId);
-    this._router.navigate(['course/courses', courseId]);
+
+  navigateToCourseDetails(id: number) {
+    this._router.navigate(['course/instructorCourses', id]);
   }
 
 }

@@ -21,6 +21,7 @@ import { AssignmentModule } from '../assignment/assignment-module';
     
   ],
   imports: [
+    // AlertModule,
     CommonModule,
     CourseRoutingModule,
     FormsModule,

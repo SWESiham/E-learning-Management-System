@@ -20,7 +20,8 @@
             <div class="col-md-9 col-lg-10">
                 <div class="card-body h-100 d-flex flex-column justify-content-around align-items-start py-4">
                     <h5 class="card-title mb-4 fw-normal">{{course.title}}</h5>
-                    <button class="btn btn-primary d-flex align-items-center gap-2" (click)="navigateToCourseDetails(course.id)">
+
+                    <button (click)="navigateToCourseDetails(course.id)" class="btn btn-primary d-flex align-items-center gap-2">
                         <i class="fa-regular fa-eye"></i> View Course
                     </button>
                 </div>

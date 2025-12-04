@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { ApiCourse } from '../api-course';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Lecture } from '../../../core/models/Material';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Auth } from '../../../core/services/auth';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-course',
@@ -12,7 +13,7 @@ import { Auth } from '../../../core/services/auth';
   styleUrl: './edit-course.css',
 })
 export class EditCourse {
-  constructor(private _auth: Auth,private _course: ApiCourse,private _formBuilder: FormBuilder,private route: ActivatedRoute) {
+  constructor( private _router: Router,private toastr: ToastrService,private _auth: Auth,private _course: ApiCourse,private _formBuilder: FormBuilder,private route: ActivatedRoute) {
      this.courseForm = this._formBuilder.group({
     title: ['', Validators.required],
     description: ['', Validators.required],
@@ -81,7 +82,7 @@ export class EditCourse {
     let flag=true
   this.lectures.forEach((lecture: any) => {
     if (lecture.title==="" || lecture.duration===0 || lecture.link==="") {
-      alert('All information is requiredddddd');
+     this.showToast('warning', 'All information is required');
       flag=false
       return;
     }
@@ -89,12 +90,11 @@ export class EditCourse {
   if(flag)
   {
     
-  }
-  else{
+  
 
   this.learningObjectives.forEach((l: any) => {
     if (l==="") {
-      alert('All information is requiredddddd');
+      this.showToast('warning', 'All information is required');
       flag=false
       return ;
     }
@@ -109,20 +109,35 @@ export class EditCourse {
     }
     if (this.courseForm.invalid) {
       
-     alert('All information is required');
+     this.showToast('warning', 'All information is required');
     return;
   }
     this._course.editCourse(this.courseId!, this.courseForm.value).subscribe((res: any) => {
       console.log("res", res);
-      alert("Course Updated Successfully");
+      this.showToast('success', 'Course Updated Successfully');
+      this._router.navigate(['course/instructorCourses']);
     })
+  }
+  showToast(type: any, message: any) {
+    this.toastr.show(
+      '<span data-notify="icon" class="nc-icon nc-bell-55"></span><span data-notify="message">' +
+        message +
+        '</span>',
+      '',
+      {
+        timeOut: 4000,
+        enableHtml: true,
+        toastClass: 'alert alert-' + type + ' alert-with-icon',
+        positionClass: 'toast-top-center',
+      }
+    );
   }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.courseId=id
     console.log("id", id);
      const payload= this._auth.getUserPayload()
-      if(payload&&this._auth.isLoggedInWithRole('instructor')){
+      if(payload&&this._auth.isLoggedInWithRole('Instructor')){
    this._course.getCourse(id!).subscribe((res: any) => {
       this.course = res;
       console.log("this.course", this.course);

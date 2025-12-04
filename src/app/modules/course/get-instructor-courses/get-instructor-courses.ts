@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiCourse } from '../api-course';
+
 import { Auth } from '../../../core/services/auth';
 import { Router } from '@angular/router';
 
@@ -34,5 +35,6 @@ export class GetInstructorCourses {
   navigateToCourseDetails(id: number) {
     this._router.navigate(['course/instructorCourses', id]);
   }
+
 
 }

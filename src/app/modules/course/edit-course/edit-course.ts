@@ -148,6 +148,7 @@ export class EditCourse {
           description: [this.course.description, Validators.required],
           authorName: [ this.course.authorName],
           authorId: [this.course.authorId ],
+
           price: [this.course.price, Validators.required],
           hours: [this.course.hours, Validators.required],
           category: [this.course.category, Validators.required],
@@ -162,5 +163,6 @@ export class EditCourse {
  
    
    
+
   }
 }

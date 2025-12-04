@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <div class="container">
-    <a routerLink="/home" class="back-link">
+
+    <a routerLink="" class="back-link">
         <i class="fa-solid fa-arrow-left"></i> Back to Home
     </a>
 
@@ -92,7 +93,8 @@
             <button type="submit" class="submit-btn" [disabled]="registerForm.invalid">Create Account</button>
 
             <div class="form-footer">
-                Already have an account? <a routerLink="/login">Sign in</a>
+
+                Already have an account? <a routerLink="/auth/login/">Sign in</a>
             </div>
         </form>
     </div>

@@ -11,7 +11,6 @@ const routes: Routes = [
   { path: '', redirectTo: 'courses', pathMatch: 'full' },
 
   { path: 'create', component: CreateCourse },
-
   { path: 'instructorCourses', component: GetInstructorCourses },
   { path: 'instructorCourses/:id', component: InstructorCourseDetails, children: [{ path: 'assignments', component: InstructorAssignment }]},
   { path: 'catalogCourses', component: CatalogCourses },
@@ -23,3 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class CourseRoutingModule {}
+

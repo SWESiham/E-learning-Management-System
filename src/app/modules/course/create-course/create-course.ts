@@ -181,5 +181,6 @@ ngOnInit(): void {
         positionClass: 'toast-bottom-center',
       }
     );
+
   }
 }

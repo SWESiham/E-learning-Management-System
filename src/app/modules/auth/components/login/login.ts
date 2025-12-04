@@ -34,7 +34,15 @@ export class Login {
 
           this._auth.saveToken(user);
 
-          this._router.navigate(['']);
+          console.log(user.role);
+          
+          if(user.role.toLowerCase() === 'instructor') {
+            this._router.navigate(['/instructor/courses']);
+          } else if(user.role.toLowerCase() === 'student') {
+            this._router.navigate(['/student/my-courses']);
+          }else if(user.role.toLowerCase() === 'admin') {
+            this._router.navigate(['']);
+          }
         } else {
           alert("Invalid Credentials!");
         }

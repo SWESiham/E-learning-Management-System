@@ -10,11 +10,11 @@ import { CatalogCourses } from './catalog-courses/catalog-courses';
 import { InstructorCourseDetails } from './instructor-course-details/instructor-course-details';
 import { AssignmentModule } from '../assignment/assignment-module';
 
+
 @NgModule({
   declarations: [
     CreateCourse,
-    EditCourse,
-  
+    EditCourse, 
     GetInstructorCourses,
         CatalogCourses,
         InstructorCourseDetails,

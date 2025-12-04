@@ -13,4 +13,5 @@ export interface Course{
     imageUrl:string,
     assignments: string[],
     learningObjectives: string[],
+
 }

@@ -3,7 +3,6 @@ body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
-        /* Course Image & Play Button */
         .course-preview {
             position: relative;
             border-radius: 8px;
@@ -149,4 +148,6 @@ body {
         .button-primary
         {
             border-bottom: 1px solid #0d6efd !important;
+
         }
+        

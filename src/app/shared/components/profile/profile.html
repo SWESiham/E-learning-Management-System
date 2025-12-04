@@ -1,0 +1,65 @@
+<div class="settings-container">
+    
+    <div class="header-section">
+        <a routerLink="/" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back
+        </a>
+        <h1>Settings</h1>
+        <p class="subtitle">Manage your account settings and preferences</p>
+    </div>
+
+    <div class="card profile-card">
+        <div class="avatar-wrapper">
+            <div class="avatar">
+                <img src="{{user.image}}" alt="" srcset="" class="rounded-circle" style="  width: 105px; height: 105px; object-fit: cover;">
+                <button class="camera-btn" (click)="fileInput.click()" >
+                    <i class="fa-solid fa-camera"></i>
+                </button>
+            </div>
+        </div>
+        <div class="upload-info mt-4 ">
+            <button class="btn btn-primary" (click)="fileInput.click()">Upload Photo</button>
+            <p class="helper-text">JPG, PNG or GIF. Max size 2MB.</p>
+       
+            <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
+        </div>
+    </div>
+
+    <div class="card form-card">
+        <h2>Personal Information</h2>
+        
+        <form (ngSubmit)="saveChanges()">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.fullname" name="fullname">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" [value]="user.email" disabled>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Bio</label>
+                    <textarea class="form-control" rows="4" placeholder="Write something about yourself..." [(ngModel)]="user.bio" name="bio"  ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.location" name="location">
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -8,7 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { GetInstructorCourses } from './get-instructor-courses/get-instructor-courses';
 import { CatalogCourses } from './catalog-courses/catalog-courses';
 import { InstructorCourseDetails } from './instructor-course-details/instructor-course-details';
-
+// import { AlertModule } from 'ngx-bootstrap/alert';
 @NgModule({
   declarations: [
     CreateCourse,
@@ -17,14 +17,21 @@ import { InstructorCourseDetails } from './instructor-course-details/instructor-
     GetInstructorCourses,
         CatalogCourses,
         InstructorCourseDetails,
+        
     
   ],
   imports: [
+    // AlertModule,
     CommonModule,
     CourseRoutingModule,
     FormsModule,
     ToastrModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot({   
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
   ]
 })
 export class CourseModule { }

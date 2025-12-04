@@ -15,8 +15,8 @@ export class GetInstructorCourses {
   instructorName:string='';
   ngOnInit() {
     const getUserPayload = this._auth.getUserPayload();
-    this.instructorName=getUserPayload.username
-    if(getUserPayload&&this._auth.isLoggedInWithRole('instructor')){
+    this.instructorName=getUserPayload.fullname
+    if(getUserPayload&&this._auth.isLoggedInWithRole('Instructor')){
     this._course.getCousreByInstructorId(getUserPayload.id).subscribe((res: any) => {
       this.courses = res;
       console.log("this.courses", this.courses);
@@ -28,6 +28,9 @@ export class GetInstructorCourses {
   navigateToCreateCourse() {
   
     this._router.navigate(['course/create']);
+  }
+  navigateToCourseDetails(id: number) {
+    this._router.navigate(['course/instructorCourses', id]);
   }
 
 }

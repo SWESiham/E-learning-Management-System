@@ -201,37 +201,6 @@
       "assignments": []
     },
     {
-      "id": "9861",
-      "title": "ccccccc",
-      "description": "ccccccccccccccccccccccccccccccccccccccccccccccccccccc",
-      "authorName": {
-        "value": "Dr. Ahmed Khaled"
-      },
-      "authorId": {
-        "value": "2"
-      },
-      "price": 2,
-      "hours": 1,
-      "category": "Data Science",
-      "imageUrl": "placeholder.png",
-      "learningObjectives": {
-        "value": [
-          "2wwwwwwwwwww"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "wwwwwwww",
-            "duration": 10,
-            "link": "eeeeeeee",
-            "status": false
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
       "id": "1636",
       "title": "trkef",
       "description": "gdkak",
@@ -287,6 +256,40 @@
             "title": "rts,",
             "duration": 10,
             "link": "tdnk",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "0a7a",
+      "title": "node",
+      "description": "nodejsnodejsnodejsnodejsnodejsnodejsnodejsnodejsnodejsnodejsnodejsnodejsnodejsnodejsnodejs",
+      "authorName": "mr. best malak",
+      "authorId": "c139",
+      "price": 10,
+      "hours": 20,
+      "category": "Web Development",
+      "imageUrl": "https://campustechnology.com/-/media/edu/campustechnology/2019-images/20191209online.jpg",
+      "learningObjectives": {
+        "value": [
+          "handle",
+          "cRUD"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 50,
+            "link": "https://youtu.be/TRwuM59U7j8?si=BsR4tNymq7AfVKSY",
+            "status": false
+          },
+          {
+            "title": "hanfdle",
+            "duration": 29,
+            "link": "https://youtu.be/TRwuM59U7j8?si=BsR4tNymq7AfVKSY",
             "status": false
           }
         ]

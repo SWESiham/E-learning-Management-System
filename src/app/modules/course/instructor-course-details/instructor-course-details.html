@@ -23,45 +23,39 @@
 
 
                 <ul class="nav nav-tabs custom-tabs mb-4">
-                    <li class="nav-item"><span class="nav-link cursor-pointer "  [ngClass]="{'active': activebutton}" (click)="setactivebuttom(true)" href="#">Content</span></li>
-
+                    <li class="nav-item">
+                        <span class="nav-link cursor-pointer" 
+                            [ngClass]="{'active': activebutton}" 
+                            (click)="setactivebuttom(true)" 
+                            [routerLink]="['./']"> Content
+                        </span>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" 
                         [routerLink]="['assignments']" 
-                        routerLinkActive="active">
-                        Assignments
+                        routerLinkActive="active"
+                        (click)="setactivebuttom(false)"> Assignments
                         </a>
                     </li>
                 </ul>
 
                 <router-outlet></router-outlet>
 
-
-                <div class="module-card" *ngIf="!_router.url.includes('assignments')">
-                    <ul class="list-group list-group-flush">
-                        </ul>
-                </div>
-
-                
-
                 <div class="module-card" [ngClass]="{'d-none': !activebutton}">
-
-                    
                     <ul class="list-group list-group-flush">
-                        <li *ngFor="let lecture of course.Material.value" class="list-group-item">
-                            <i class="fa-solid fa-book-atlas text-success status-icon"></i>
+                        <li *ngFor="let lecture of course.Material?.value" class="list-group-item"> <i class="fa-solid fa-book-atlas text-success status-icon"></i>
                             <div class="flex-grow-1">
                                 <div class="fw-medium">
-                                    <a class ="text-decoration-none text-black" href={{lecture.link}} target="_blank">{{lecture.title}}</a></div>
-                                <div class="text-muted small">{{convertToHours( lecture.duration)}}</div>
+                                    <a class="text-decoration-none text-black" [href]="lecture.link" target="_blank">{{lecture.title}}</a>
+                                </div>
+                                <div class="text-muted small">{{convertToHours(lecture.duration)}}</div>
                             </div>
-                          
                         </li>
-                      
                     </ul>
                 </div>
-            </div>
+                            
+            
 
             <div class="col-lg-4">
                 <div class="sidebar-card">

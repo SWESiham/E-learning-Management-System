@@ -13,7 +13,7 @@
       "username": "Dr. Ahmed Khaled",
       "email": "ahmed@lms.com",
       "password": "123",
-      "role": "instructor",
+      "role": "Instructor",
       "bio": "Senior Software Engineer & Angular Expert.",
       "isActive": true
     },
@@ -22,7 +22,7 @@
       "username": "Eng. Sarah Nabil",
       "email": "sarah@lms.com",
       "password": "123",
-      "role": "instructor",
+      "role": "Instructor",
       "bio": "Creative UI/UX Designer.",
       "isActive": true
     },

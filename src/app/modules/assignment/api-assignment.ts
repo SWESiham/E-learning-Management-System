@@ -7,25 +7,27 @@ import { assignment } from '../../core/models/assignment';
   providedIn: 'root',
 })
 export class ApiAssignment {
-  apiURL = 'http://localhost:3000/course';
+  apiURL = 'http://localhost:3000/assignments';
 
   constructor(private http: HttpClient) {}
-
+  getAssignments() {
+    return this.http.get(this.apiURL);
+  }
   getAssignmentsByCourseId(courseId: string) {
-    return this.http.get<assignment[]>(`${this.apiURL}/courses/${courseId}/assignments`);
+    return this.http.get(`${this.apiURL}?courseId=${courseId}`);
   }
-  getAssignmentById(courseId: string, assignmentId: string) {
-    return this.http.get<assignment>(`${this.apiURL}/${courseId}/assignments/${assignmentId}`);
+  getAssignmentById(assignmentId: string) {
+    return this.http.get(`${this.apiURL}/${assignmentId}`);
   }
 
-  createAssignment(courseId: string, data: assignment) {
-    return this.http.post<assignment>(`${this.apiURL}/${courseId}/assignments`, data);
+  createAssignment(data: assignment) {
+    return this.http.post(this.apiURL, data);
   }
-  updateAssignment(courseId: string, assignmentId: string, data: assignment) {
-    return this.http.put<assignment>(`${this.apiURL}/${courseId}/assignments/${assignmentId}`, data);
+  editAssignment(assignmentId: string, data: assignment) {
+    return this.http.put(`${this.apiURL}/${assignmentId}`, data);
   }
-  deleteAssignment(courseId: string, assignmentId: string) {
-    return this.http.delete(`${this.apiURL}/${courseId}/assignments/${assignmentId}`);
+  deleteAssignment(assignmentId: string) {
+    return this.http.delete(`${this.apiURL}/${assignmentId}`);
   }
   
 }

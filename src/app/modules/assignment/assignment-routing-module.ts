@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateAssignment } from './create-assignment/create-assignment';
 import { EditAssignment } from './edit-assignment/edit-assignment';
-import { DeleteAssignment } from './delete-assignment/delete-assignment';
 import { SubmitAssignment } from './submit-assignment/submit-assignment';
 import { ViewSubmition } from './view-submition/view-submition';
 import { GradeAssignment } from './grade-assignment/grade-assignment';
+
 const routes: Routes = [
-  
+
+  { path: 'create', component: CreateAssignment },
+  { path: 'edit/:id', component: EditAssignment },
+  { path: 'submit/:id', component: SubmitAssignment },
+  { path: 'view/:id', component: ViewSubmition },
+  { path: 'grade/:id', component: GradeAssignment },
 ];
 
 @NgModule({

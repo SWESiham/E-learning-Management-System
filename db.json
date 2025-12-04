@@ -128,7 +128,9 @@
           }
         ]
       },
-      "assignments": ["301"],
+      "assignments": [
+        "301"
+      ],
       "id": "e386"
     },
     {
@@ -336,30 +338,20 @@
   ],
   "assignments": [
     {
-      "id": "301",
-      "courseId": "e386",
-      "title": "Introduction to Python",
-      "description": "Write a Python script to calculate the factorial of a number.",
-      "dueDate": "2025-12-10",
-      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
-
-    },
-    {
       "id": "302",
-      "courseId": "6f81",
+      "courseId": "e386",
       "title": "Frontend Basics",
       "description": "Create a simple HTML and CSS page with a responsive layout.",
       "dueDate": "2025-12-15",
-      "assignmentLink":"https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
     },
     {
       "id": "303",
-      "courseId": "567d",
+      "courseId": "e386",
       "title": "Playground Project",
       "description": "Build a small project using any programming language of your choice.",
       "dueDate": "2025-12-20",
-      "assignmentLink":"https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
-
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
     },
     {
       "id": "304",
@@ -367,8 +359,7 @@
       "title": "Data Science Basics",
       "description": "Analyze a dataset and create a visualization using Python or R.",
       "dueDate": "2025-12-25",
-      "assignmentLink":"https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
-
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
     },
     {
       "id": "305",
@@ -384,7 +375,7 @@
       "title": "Web Development Project",
       "description": "Build a simple web application using Angular.",
       "dueDate": "2026-01-05",
-      "assignmentLink":"https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
     }
   ]
 }

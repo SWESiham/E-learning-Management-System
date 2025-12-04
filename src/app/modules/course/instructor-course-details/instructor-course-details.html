@@ -18,13 +18,36 @@
                     </div>
                 </div>
 
+
                 <ul class="nav nav-tabs custom-tabs mb-4">
-                    <li class="nav-item"><a class="nav-link active" href="#">Content</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['assignments']">Assignments</a>
+                        <a class="nav-link" 
+                        [routerLink]="['/courses', course.id]" 
+                        [routerLinkActiveOptions]="{exact: true}"
+                        routerLinkActive="active">
+                        Content
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" 
+                        [routerLink]="['assignments']" 
+                        routerLinkActive="active">
+                        Assignments
+                        </a>
                     </li>
                 </ul>
+
                 <router-outlet></router-outlet>
+
+
+                <div class="module-card" *ngIf="!_router.url.includes('assignments')">
+                    <ul class="list-group list-group-flush">
+                        </ul>
+                </div>
+
+                
+
                 <div class="module-card">
                     
                     <ul class="list-group list-group-flush">

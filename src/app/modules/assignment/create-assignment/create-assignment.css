@@ -1,0 +1,30 @@
+:host {
+    display: block;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+}
+
+.form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.form-label {
+    color: #495057;
+    font-size: 0.95rem;
+}
+
+.btn-light {
+    background-color: #fff;
+    color: #6c757d;
+}
+
+.btn-light:hover {
+    background-color: #f8f9fa;
+    color: #000;
+}

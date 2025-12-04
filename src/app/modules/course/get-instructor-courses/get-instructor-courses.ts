@@ -13,7 +13,6 @@ export class GetInstructorCourses {
   constructor(private _auth: Auth, private _course: ApiCourse,private _router: Router) { }
   courses: any[] = [];
   instructorName:string='';
-  assignments: any[] =[];
   ngOnInit() {
     var getUserPayload = this._auth.getUserPayload();
     this.instructorName=getUserPayload.username
@@ -31,6 +30,10 @@ export class GetInstructorCourses {
   navigateToCreateCourse() {
   
     this._router.navigate(['course/create']);
+  }
+  navigateToCourseDetails(courseId: any) {
+    console.log("TO COURSE", courseId);
+    this._router.navigate(['course/courses', courseId]);
   }
 
 }

@@ -33,7 +33,7 @@ export class SubmitAssignment implements OnInit {
     this.studentData = this._auth.getUserPayload();
 
     this.submitForm = this.fb.group({
-      answerLink: ['', [Validators.required, Validators.pattern('https?://.+')]] // تحقق بسيط من الرابط
+      answerLink: ['', [Validators.required, Validators.pattern('https?://.+')]] 
     });
 
     if (this.assignmentId) {
@@ -53,7 +53,7 @@ export class SubmitAssignment implements OnInit {
         assignmentId: this.assignmentId,
         studentId: this.studentData.id,
         studentName: this.studentData.fullname || this.studentData.username,
-        submissionDate: new Date().toISOString().split('T')[0], // تاريخ اليوم
+        submissionDate: new Date().toISOString().split('T')[0], 
         answer: this.submitForm.value.answerLink,
         status: 'pending',
         grade: null,

@@ -1,10 +1,7 @@
-/* ... الكود السابق للـ Scroll والأزرار ... */
-
 .cursor-pointer {
     cursor: pointer;
 }
 
-/* حركة دوران السهم */
 .transition-icon {
     transition: transform 0.3s ease;
 }
@@ -12,7 +9,6 @@
     transform: rotate(90deg);
 }
 
-/* تنسيق منطقة الفورم */
 .grading-form {
     background-color: #f8f9fa;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
@@ -24,7 +20,6 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* تنسيق زر الرابط */
 .btn-white {
     background-color: white;
     transition: all 0.2s;

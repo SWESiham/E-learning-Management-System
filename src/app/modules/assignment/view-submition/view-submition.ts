@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiSubmission } from '../api-submission';
-import { ApiAssignment } from '../api-assignment'; // لجلب عنوان الاسايمنت
+import { ApiAssignment } from '../api-assignment'; 
 import { Location } from '@angular/common';
 
 @Component({

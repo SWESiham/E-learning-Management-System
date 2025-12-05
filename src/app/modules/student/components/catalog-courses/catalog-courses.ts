@@ -13,13 +13,28 @@ export class CatalogCourses {
   searchCourse: string = ''
   isActiveAll = true;
   isActiveCategory: any = {};
-  categories = categories
+  categories = categories;
+  enrolled: boolean = false;
   constructor(private _auth: Auth, private _apiCourse: ApiCourse) { }
   courses: any[] = []
   ngOnInit(): void {
     this._apiCourse.getCourses().subscribe((res: any) => {
       this.courses = res;
       console.log("this.courses", this.courses);
+    const user = this._auth.getUserPayload();
+      if (user && user.id) {
+        this._apiCourse.getEnrollmentsByUserId(user.id).subscribe((enrollments: any) => {
+          
+          this.courses.forEach(course => {
+      
+            const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
+           
+            course.isEnrolled = isEnrolled; 
+          });
+
+        });
+      }
+    
     })
   }
   coursesFilter(category: string) {
@@ -42,5 +57,28 @@ export class CatalogCourses {
       this.courses = res.filter((course: any) => course.title.toLowerCase().includes(this.searchCourse.toLowerCase()));
       console.log("this.courses", this.courses);
     })
+  }
+  enrollNow(courseId: string, event: Event) {
+    event.stopPropagation();
+    console.log("Enrolling in course with ID:", courseId);
+    const user = this._auth.getUserPayload();
+    const studentId = user['id'];
+    const enrollmentData = {
+      studentId: studentId,
+      courseId: courseId,
+      progress: 0
+    }
+    this._apiCourse.enrollInCourse(enrollmentData).subscribe({
+      next: (res) => {
+        alert('Enrolled successfully!');
+        const selectedCourse = this.courses.find(c => c.id === courseId);
+        if (selectedCourse) {
+          selectedCourse.isEnrolled = true;
+        }
+      },
+      error: (err) => {
+        console.error('Enrollment failed:', err);
+      }
+    });
   }
 }

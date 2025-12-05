@@ -34,4 +34,11 @@ export class ApiCourse {
   getCoursesByCategory(category: string) {
     return this.http.get(`${this.apiURL}?category=${category}`);
   }
+   enrollInCourse(enrollment: any) {
+    const enrollApiURL = 'http://localhost:3000/enrollments';
+    return this.http.post(enrollApiURL, enrollment);
+  }
+  getEnrollmentsByUserId(userId: string) {
+    return this.http.get(`http://localhost:3000/enrollments?userId=${userId}`);
+  }
 }

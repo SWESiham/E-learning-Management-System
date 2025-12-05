@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
-
 export class Auth {
   constructor(private _http: HttpClient, private router: Router) { };
   apiURL = 'http://localhost:3000/users';
@@ -40,7 +39,7 @@ export class Auth {
     if (token) {
       // header.payload.signature
       const userPayload = atob(token.split('.')[1]);
-      console.log(userPayload);
+
       return JSON.parse(userPayload);
     }
     return null;
@@ -62,6 +61,6 @@ updateUser(id: string, user: any) {
 }
   logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/auth/login']);
+
   }
 }

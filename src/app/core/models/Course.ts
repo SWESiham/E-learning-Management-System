@@ -11,7 +11,6 @@ export interface Course{
   category:string,
   Material:Lecture[],
     imageUrl:string,
-    assignments: string[],
     learningObjectives: string[],
 
 }

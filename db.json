@@ -214,7 +214,7 @@
             "title": "What is UI/UX?",
             "duration": 12,
             "link": "https://www.youtube.com/embed/c9Wg6Cb_YlU",
-            "status": false
+            "status": true
           }
         ]
       },
@@ -334,6 +334,12 @@
       "courseId": "6f81",
       "progress": 50,
       "enrollmentDate": "2023-11-05"
+    },
+    {
+      "id": "710a",
+      "studentId": "4",
+      "courseId": "567d",
+      "progress": 100
     }
   ],
   "submissions": [

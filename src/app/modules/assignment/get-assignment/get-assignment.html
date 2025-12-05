@@ -1,0 +1,91 @@
+<div class="container mt-2">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="mb-0 fw-normal">Course Assignments</h4>
+    
+    <button *ngIf="userRole === 'Instructor'" 
+            class="btn btn-primary d-flex align-items-center gap-2 px-3" 
+            (click)="navigateToCreate()">
+      <i class="bi bi-plus-lg"></i> Create Assignment
+    </button>
+  </div>
+
+  <div class="assignments-list">
+    <div *ngFor="let assignment of assignments" class="card mb-3 border rounded-3 shadow-sm assignment-card">
+      <div class="card-body p-4">
+              
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h5 class="card-title fw-normal mb-0">{{ assignment.title }}</h5>
+          
+          <div class="d-flex align-items-center gap-3">
+              
+              <ng-container *ngIf="userRole === 'Instructor'">
+                  <button class="btn btn-outline-primary btn-sm px-3 d-flex align-items-center gap-2" 
+                          (click)="navigateToEdit(assignment.id)">
+                      <i class="fa-regular fa-pen-to-square"></i> Edit
+                  </button>
+                  
+                  <button class="btn btn-outline-danger btn-sm px-3 d-flex align-items-center gap-2" 
+                          (click)="Delete(assignment.id)">
+                      <i class="fa-regular fa-trash-can"></i> Delete
+                  </button>
+              </ng-container>
+
+              <ng-container *ngIf="userRole === 'Student'">
+                  
+                  <div *ngIf="assignment.isSubmitted" class="d-flex align-items-center gap-3">
+                      
+                      <span *ngIf="assignment.studentGrade != null" 
+                            class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill border border-success" 
+                            style="font-size: 0.85rem; font-weight: 500;">
+                          <i class="bi bi-check-circle-fill me-1"></i>
+                          Grade: {{ assignment.studentGrade }} / {{ assignment.points }}
+                      </span>
+
+                      <span *ngIf="assignment.studentGrade == null" 
+                            class="badge bg-warning bg-opacity-10 text-warning px-3 py-2 rounded-pill border border-warning" 
+                            style="font-size: 0.85rem; font-weight: 500;">
+                          <i class="bi bi-hourglass-split me-1"></i>
+                          Pending Review
+                      </span>
+                      
+                      <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" 
+                              (click)="navigateToViewSubmission(assignment.submissionId)">
+                          <i class="bi bi-eye"></i> View Assignment
+                      </button>
+                  </div>
+
+                  <div *ngIf="!assignment.isSubmitted">
+                       <button class="btn btn-primary btn-sm px-4 d-flex align-items-center gap-2" 
+                               (click)="navigateToSolve(assignment.id)">
+                          <i class="bi bi-pencil-square"></i> Start Assignment
+                      </button>
+                  </div>
+
+              </ng-container>
+
+          </div>
+        </div>
+
+        <p class="text-muted mb-3">{{ assignment.description }}</p>
+
+        <div class="d-flex align-items-center text-secondary small pt-2 border-top mt-3">
+            <div class="me-4 d-flex align-items-center gap-2">
+                <i class="bi bi-calendar-event"></i>
+                <span>Due: {{ assignment.dueDate | date:'mediumDate' }}</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-star"></i>
+                <span>{{ assignment.points }} Points</span>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div *ngIf="assignments.length === 0" class="text-center py-5 text-muted">
+        <i class="bi bi-journal-x fs-1 mb-2 d-block"></i>
+        <p>No assignments available for this course yet.</p>
+    </div>
+
+  </div>
+</div>

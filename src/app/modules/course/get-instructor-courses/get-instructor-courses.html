@@ -1,0 +1,36 @@
+<div class="container py-5">
+    
+    <div class="mb-5">
+        <h2 class="fw-normal mb-2">Welcome back, Professor {{instructorName}}!</h2>
+        <p class="text-muted">Manage your courses and track student progress</p>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0 fw-normal">My Courses</h4>
+        <button class="btn btn-primary d-flex align-items-center gap-2" (click)="navigateToCreateCourse()">
+            <i class="bi bi-plus-lg"></i> + Create Course
+        </button>
+    </div>
+    
+    <div *ngFor="let course of courses" class="card course-card mb-3 rounded-4 overflow-hidden shadow-sm">
+        <div class="row g-0">
+            <div class="col-md-3 col-lg-2">
+                <img src={{course.imageUrl}}  class="img-fluid course-img w-100" alt="React Code">
+            </div>
+            <div class="col-md-9 col-lg-10">
+                <div class="card-body h-100 d-flex flex-column justify-content-around align-items-start py-4">
+                    <h5 class="card-title mb-4 fw-normal">{{course.title}}</h5>
+
+                    <button (click)="navigateToCourseDetails(course.id)" class="btn btn-primary d-flex align-items-center gap-2">
+
+                        <i class="fa-regular fa-eye"></i> View Course
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+</div>

@@ -1,0 +1,30 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.transition-icon {
+    transition: transform 0.3s ease;
+}
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+.grading-form {
+    background-color: #f8f9fa;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-white {
+    background-color: white;
+    transition: all 0.2s;
+}
+.btn-white:hover {
+    background-color: #f1f3f5;
+    border-color: #dee2e6;
+}

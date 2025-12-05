@@ -1,18 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Users } from '../models/users';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class Auth {     
-  constructor(private _http: HttpClient) { };
+export class Auth {
+  constructor(private _http: HttpClient, private router: Router) { };
   apiURL = 'http://localhost:3000/users';
   addUser(user: Users) {
-    return this._http.post(this.apiURL,user);
+    return this._http.post(this.apiURL, user);
   }
   getUserById(_id: string) {
-    return this._http.get(this.apiURL+_id);
+    return this._http.get(`${this.apiURL}/${_id}`);
   }
 
   saveToken(user: Users) {
@@ -25,9 +26,11 @@ export class Auth {
   }
 
   getToken() {
+    console.log("token", localStorage.getItem('token'));
     return localStorage.getItem('token');
   }
-  loginUser(email: string){
+
+  loginUser(email: string) {
     return this._http.get(`${this.apiURL}?email=${email}`);
   }
 
@@ -36,6 +39,7 @@ export class Auth {
     if (token) {
       // header.payload.signature
       const userPayload = atob(token.split('.')[1]);
+
       return JSON.parse(userPayload);
     }
     return null;
@@ -49,5 +53,14 @@ export class Auth {
   isLoggedInWithRole(role: string): boolean {
     const userRole = this.getUserRole();
     return userRole === role;
+  }
+
+
+updateUser(id: string, user: any) {
+  return this._http.put(`${this.apiURL}/${id}`, user);
+}
+  logout() {
+    localStorage.removeItem('token');
+
   }
 }

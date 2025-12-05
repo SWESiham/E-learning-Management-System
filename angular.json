@@ -37,7 +37,9 @@
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css",
-               "node_modules/bootstrap/dist/css/bootstrap.min.css"
+               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+               "node_modules/ngx-toastr/toastr.css"
+
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -103,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9f52d63b-32d8-42ed-81df-689458cf6857"
   }
 }

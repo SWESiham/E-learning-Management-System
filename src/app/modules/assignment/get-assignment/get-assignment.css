@@ -1,0 +1,44 @@
+.assignment-card {
+    border-color: #e9ecef !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.assignment-card:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.05) !important;
+}
+
+.card-title {
+    font-size: 1.15rem;
+    color: #212529;
+}
+
+.text-muted {
+    color: #6c757d !important;
+    font-size: 0.95rem;
+}
+
+.small {
+    font-size: 0.875rem;
+}
+
+.btn-outline-primary {
+    color: #0d6efd;
+    border-color: #dee2e6; 
+}
+
+.btn-outline-primary:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* رابط View Submissions */
+.view-link {
+    color: #0d6efd;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.view-link:hover {
+    text-decoration: underline !important;
+}

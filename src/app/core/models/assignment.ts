@@ -1,11 +1,9 @@
-import { choicesQuestions } from "./choiceQuestion";
-import { writtenQuestion } from "./writtenQuestion";
-
 export interface assignment{
-    _id:string,
+    id:string,
+    courseId: string,
     title:string,
     description:string,
     dueDate:Date,
-    choicesQuestions: choicesQuestions[],
-    writtenQuestions: writtenQuestion[]
+    assignmentLink:string,
+    points:number
 }

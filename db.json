@@ -129,7 +129,7 @@
             "title": "Introduction to Python",
             "duration": 10,
             "link": "https://www.youtube.com/embed/_uQrJ0TkZlc",
-            "status": false
+            "status": true
           },
           {
             "title": "Setup Environment",
@@ -312,7 +312,7 @@
       "id": "enr001",
       "studentId": "4",
       "courseId": "e386",
-      "progress": 0,
+      "progress": 100,
       "enrollmentDate": "2023-11-01"
     },
     {

@@ -36,22 +36,22 @@
 
     <ul class="nav nav-tabs mb-4">
         <li class="nav-item">
-            <button class="nav-link" [class.active]="activeTab === 'overview'" (click)="setActiveTab('overview')">
+            <button class="nav-link" [class.active]="activeTab === 'overview'" (click)="setActiveTab('overview')" [routerLink]="['./']">
                 Course Overview
             </button>
         </li>
         <li class="nav-item">
-            <button class="nav-link" [class.active]="activeTab === 'content'" (click)="setActiveTab('content')">
+            <button class="nav-link" [class.active]="activeTab === 'content'" (click)="setActiveTab('content')" [routerLink]="['./']">
                 Course Content
             </button>
         </li>
         <li class="nav-item">
-            <button class="nav-link" [class.active]="activeTab === 'assignment'" (click)="setActiveTab('assignment')">
+            <button class="nav-link" [class.active]="activeTab === 'assignment'" (click)="setActiveTab('assignment')" [routerLink]="['assignments']">
                 Assignments
             </button>
         </li>
         <li class="nav-item">
-            <button class="nav-link" [class.active]="activeTab === 'resources'" (click)="setActiveTab('resources')">
+            <button class="nav-link" [class.active]="activeTab === 'resources'" (click)="setActiveTab('resources')" [routerLink]="['./']">
                 Resources
             </button>
         </li>
@@ -105,7 +105,7 @@
         </div>
 
         <div *ngIf="activeTab === 'assignment'">
-            <!-- <app-assignment-list></app-assignment-list> -->
+             <router-outlet></router-outlet>
         </div>
 
         <div *ngIf="activeTab === 'resources'">

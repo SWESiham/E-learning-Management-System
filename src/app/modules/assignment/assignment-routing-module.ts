@@ -5,9 +5,10 @@ import { EditAssignment } from './edit-assignment/edit-assignment';
 import { SubmitAssignment } from './submit-assignment/submit-assignment';
 import { ViewSubmition } from './view-submition/view-submition';
 import { GradeAssignment } from './grade-assignment/grade-assignment';
+import { GetAssignment } from './get-assignment/get-assignment';
 
 const routes: Routes = [
-
+{ path: '', component: GetAssignment },
   { path: 'create', component: CreateAssignment },
   { path: 'edit/:id', component: EditAssignment },
   { path: 'submit/:id', component: SubmitAssignment },

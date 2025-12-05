@@ -5,4 +5,5 @@ export interface assignment{
     description:string,
     dueDate:Date,
     assignmentLink:string,
+    points:number
 }

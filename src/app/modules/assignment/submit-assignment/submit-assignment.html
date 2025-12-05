@@ -1,1 +1,46 @@
-<p>submit-assignment works!</p>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body p-5">
+                    
+                    <h6 class="text-uppercase text-primary fw-bold mb-3 ls-1">Assignment Submission</h6>
+                    <h3 class="fw-bold mb-3">{{assignment.title}}</h3>
+                    <div class="bg-light p-4 rounded-3 mb-4 border">
+                        <p class="mb-0 text-secondary">{{assignment.description}}</p>
+                    </div>
+
+                    <div class="d-flex gap-4 mb-4 text-muted small">
+                        <div><i class="bi bi-star me-2"></i>Points: {{assignment.points}}</div>
+                        <div><i class="bi bi-calendar me-2"></i>Due: {{assignment.dueDate | date}}</div>
+                    </div>
+
+                    <hr class="my-4 text-muted opacity-25">
+
+                    <form [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-4">
+                            <label class="form-label fw-medium">Your Solution Link</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-link-45deg"></i></span>
+                                <input type="url" class="form-control border-start-0 ps-0" 
+                                       formControlName="answerLink" 
+                                       placeholder="Paste your Assignment link here...">
+                            </div>
+                            <div *ngIf="submitForm.get('answerLink')?.invalid && submitForm.get('answerLink')?.touched" class="text-danger small mt-1">
+                                A valid URL is required (must start with http/https).
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="button" class="btn btn-light px-4" (click)="cancel()">Cancel</button>
+                            <button type="submit" class="btn btn-primary px-4" [disabled]="submitForm.invalid">
+                                Submit Assignment
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

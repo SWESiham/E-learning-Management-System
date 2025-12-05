@@ -32,6 +32,7 @@ this.createForm = this.fb.group({
       description: ['', Validators.required],
       assignmentLink: ['', Validators.required],
       dueDate: ['', Validators.required],
+      points: [100, [Validators.required, Validators.min(1)]] 
     });
   }
 

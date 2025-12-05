@@ -28,6 +28,7 @@ export class EditAssignment implements OnInit {
       description: ['', Validators.required],
       assignmentLink: ['', Validators.required],
       dueDate: ['', Validators.required],
+      points: [100, [Validators.required, Validators.min(1)]]
     });
 
     this.assignmentId = this.route.snapshot.paramMap.get('id');

@@ -1,0 +1,35 @@
+/* ضبط خلفية الصفحة */
+:host {
+    display: block;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.card {
+    border: 1px solid #e9ecef;
+}
+
+.grade-section {
+    background-color: #f8f9fa; 
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.grade-section:hover {
+    border-color: #dee2e6;
+    background-color: #f1f3f5;
+}
+
+.btn-link {
+    color: #6c757d;
+    transition: color 0.2s;
+}
+
+.btn-link:hover {
+    color: #0d6efd;
+}
+
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}

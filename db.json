@@ -1,5 +1,5 @@
 {
-"users": [
+  "users": [
     {
       "id": "1",
       "username": "System Admin",
@@ -13,7 +13,7 @@
       "username": "Dr. Ahmed Khaled",
       "email": "ahmed@lms.com",
       "password": "123",
-      "role": "instructor",
+      "role": "Instructor",
       "bio": "Senior Software Engineer & Angular Expert.",
       "isActive": true
     },
@@ -22,7 +22,7 @@
       "username": "Eng. Sarah Nabil",
       "email": "sarah@lms.com",
       "password": "123",
-      "role": "instructor",
+      "role": "Instructor",
       "bio": "Creative UI/UX Designer.",
       "isActive": true
     },
@@ -31,7 +31,7 @@
       "username": "Omar Tarek",
       "email": "omar@student.com",
       "password": "123",
-      "role": "student",
+      "role": "Student",
       "isActive": true,
       "bio": "junior web developer",
       "location": "15 mohamed ali street,cairo",
@@ -43,7 +43,7 @@
       "username": "Mona Ali",
       "email": "mona@student.com",
       "password": "123",
-      "role": "student",
+      "role": "Student",
       "isActive": false
     },
     {
@@ -93,7 +93,7 @@
       "fullname": "salma ahmed",
       "email": "sa@gm.com",
       "password": "123",
-      "role": "student",
+      "role": "Student",
       "isActive": true,
       "bio": " Data Scientist.",
       "location": "123  St,  City",
@@ -136,7 +136,7 @@
             "title": "Introduction to Python",
             "duration": 10,
             "link": "https://www.youtube.com/embed/_uQrJ0TkZlc",
-            "status": true
+            "status": false
           },
           {
             "title": "Setup Environment",
@@ -320,18 +320,17 @@
       "assignments": []
     }
   ],
-
-    "enrollments": [
+  "enrollments": [
     {
       "id": "501",
-      "studentId": "278f",
+      "studentId": "4",
       "courseId": "e386",
-      "progress": 100,
+      "progress": 50,
       "enrollmentDate": "2023-11-01"
     },
     {
       "id": "502",
-      "studentId": "278f",
+      "studentId": "4",
       "courseId": "6f81",
       "progress": 50,
       "enrollmentDate": "2023-11-05"
@@ -340,7 +339,8 @@
   "submissions": [
     {
       "id": "901",
-      "courseId": 101,
+      "courseId": "e386",
+      "assignmentId": "303",
       "studentId": 4,
       "studentName": "Omar Tarek",
       "submissionDate": "2023-11-10",
@@ -350,26 +350,26 @@
       "feedback": "Great job! Clean code."
     },
     {
-      "id": "902",
-      "courseId": 102,
-      "studentId": 4,
+      "id": "ef2b",
+      "courseId": "e386",
+      "assignmentId": "m6a09siztgo1u2npht2jh7i",
+      "studentId": "4",
       "studentName": "Omar Tarek",
-      "submissionDate": "2023-11-12",
-      "answer": "https://figma.com/file/xyz...",
+      "submissionDate": "2025-12-05",
+      "answer": "https://drive.google.com/drive/my-drive",
       "status": "pending",
       "grade": null,
       "feedback": ""
     }
   ],
-
   "assignments": [
     {
-      "id": "303",
-      "courseId": "e386",
       "title": "Playground Project",
       "description": "Build a small project using any programming language of your choice.",
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0",
       "dueDate": "2025-12-20",
-      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+      "points": 200,
+      "id": "303"
     },
     {
       "id": "304",
@@ -377,7 +377,8 @@
       "title": "Data Science Basics",
       "description": "Analyze a dataset and create a visualization using Python or R.",
       "dueDate": "2025-12-25",
-      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0",
+      "points": 75
     },
     {
       "id": "305",
@@ -385,7 +386,8 @@
       "title": "Mobile App Design",
       "description": "Design a wireframe for a mobile app using Figma.",
       "dueDate": "2025-12-30",
-      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0",
+      "points": 60
     },
     {
       "id": "306",
@@ -393,7 +395,8 @@
       "title": "Web Development Project",
       "description": "Build a simple web application using Angular.",
       "dueDate": "2026-01-05",
-      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0"
+      "assignmentLink": "https://drive.google.com/drive/folders/1Yz--0kgoZrM_5Rtizd2m5qTx2CKtRRg0",
+      "points": 80
     },
     {
       "id": "m6a09siztgo1u2npht2jh7i",
@@ -401,8 +404,8 @@
       "title": "build script to compress images",
       "description": "script",
       "assignmentLink": "script",
-      "dueDate": "2026-01-10"
+      "dueDate": "2026-01-10",
+      "points": 20
     }
-
   ]
 }

@@ -37,7 +37,7 @@ export class Login {
           console.log(user.role);
           
           if(user.role.toLowerCase() === 'instructor') {
-            this._router.navigate(['/instructor/courses']);
+            this._router.navigate(['/course/instructorCourses']);
           } else if(user.role.toLowerCase() === 'student') {
             this._router.navigate(['/student/my-courses']);
           }else if(user.role.toLowerCase() === 'admin') {

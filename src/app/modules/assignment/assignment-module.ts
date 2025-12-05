@@ -7,7 +7,7 @@ import { SubmitAssignment } from './submit-assignment/submit-assignment';
 import { ViewSubmition } from './view-submition/view-submition';
 import { GradeAssignment } from './grade-assignment/grade-assignment';
 import { StudentAssignment } from './student-assignment/student-assignment';
-import { InstructorAssignment } from './instructor-assignment/instructor-assignment';
+import { GetAssignment } from './get-assignment/get-assignment';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -19,7 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ViewSubmition,
     GradeAssignment,
     StudentAssignment,
-    InstructorAssignment
+    GetAssignment
   ],
   imports: [
     CommonModule,
@@ -27,7 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   exports: [
-    InstructorAssignment
+    GetAssignment
   ]
 })
 export class AssignmentModule { }

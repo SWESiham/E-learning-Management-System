@@ -29,5 +29,13 @@ export class ApiAssignment {
   deleteAssignment(assignmentId: string) {
     return this.http.delete(`${this.apiURL}/${assignmentId}`);
   }
+  getSubmissionsByAssignmentId(assignmentId: string): Observable<any> {
+    return this.http.get(`${this.apiURL}/${assignmentId}/submissions`);
+  }
+  getSubmission(assignmentId: string, studentId: string): Observable<any> {
+    return this.http.get(
+      `${this.apiURL}/${assignmentId}/submissions?studentId=${studentId}`
+    );
+  }
   
 }

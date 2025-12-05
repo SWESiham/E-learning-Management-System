@@ -5,14 +5,14 @@ import { EditCourse } from './edit-course/edit-course';
 import { GetInstructorCourses } from './get-instructor-courses/get-instructor-courses';
 import { CatalogCourses } from './catalog-courses/catalog-courses';
 import { InstructorCourseDetails } from './instructor-course-details/instructor-course-details';
-import { InstructorAssignment } from '../assignment/instructor-assignment/instructor-assignment';
+import { GetAssignment } from '../assignment/get-assignment/get-assignment';
 
 const routes: Routes = [
   { path: '', redirectTo: 'courses', pathMatch: 'full' },
 
   { path: 'create', component: CreateCourse },
   { path: 'instructorCourses', component: GetInstructorCourses },
-  { path: 'instructorCourses/:id', component: InstructorCourseDetails, children: [{ path: 'assignments', component: InstructorAssignment }]},
+  { path: 'instructorCourses/:id', component: InstructorCourseDetails, children: [{ path: 'assignments', component: GetAssignment }]},
   { path: 'catalogCourses', component: CatalogCourses },
   { path: 'instructorCourses/edit/:id', component: EditCourse },
 ];

@@ -1,0 +1,121 @@
+<div class="container py-4" *ngIf="courseData">
+
+    <a routerLink="/student/my-courses" class="text-decoration-none text-secondary mb-3 d-inline-block">
+        <i class="bi bi-arrow-left"></i> Back
+    </a>
+
+    <div class="card border-0 shadow-sm mb-4 d-flex align-items-center overflow-hidden">
+
+        <div *ngIf="!currentVideoUrl" class="bg-dark position-relative" style="width: 100%; height: 600px;">
+            <img [src]="courseData.imageUrl" class="w-100 h-100 object-fit-cover opacity-50" alt="Course Image">
+
+            <button (click)="playVideo(courseData.Material.value[0].link)"
+                class="btn btn-primary rounded-circle position-absolute top-50 start-50 translate-middle p-3">
+                <i class="bi bi-play-fill fs-1"></i>
+            </button>
+        </div>
+
+        <div *ngIf="currentVideoUrl" class="bg-black" style=" width: 100%; height: 600px;">
+            <iframe [src]="currentVideoUrl" class="w-100 h-100" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+
+    <div class="card-body p-4">
+        <h2 class="fw-bold">{{ courseData.title }}</h2>
+        <p class="text-muted">{{ courseData.authorName.value }}</p>
+        <div class="d-flex gap-3 text-secondary small">
+            <span><i class="bi bi-clock"></i> {{ courseData.totalLessons }} Lessons</span>
+            <span><i class="bi bi-trophy"></i> {{ progress }}% Completed</span>
+        </div>
+    </div>
+
+
+    <ul class="nav nav-tabs mb-4">
+        <li class="nav-item">
+            <button class="nav-link" [class.active]="activeTab === 'overview'" (click)="setActiveTab('overview')">
+                Course Overview
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" [class.active]="activeTab === 'content'" (click)="setActiveTab('content')">
+                Course Content
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" [class.active]="activeTab === 'assignment'" (click)="setActiveTab('assignment')">
+                Assignments
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" [class.active]="activeTab === 'resources'" (click)="setActiveTab('resources')">
+                Resources
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div *ngIf="activeTab === 'overview'">
+            <h5 class="fw-bold mb-3">What you'll learn</h5>
+            <ul class="">
+                <li *ngFor="let objective of courseData.learningObjectives.value"
+                    class="mb-2 d-flex gap-2 bullet-list bi-filled-cirle">
+                    <span>{{objective}}</span>
+                </li>
+            </ul>
+
+            <hr class="my-4">
+
+            <h5 class="fw-bold mb-3">Description</h5>
+            <p class="text-secondary lh-lg">
+                {{courseData.description}}
+            </p>
+        </div>
+
+        <div *ngIf="activeTab === 'content'">
+            <div class="card p-4 mb-4">
+                <h5 class="fw-bold mb-3">Course Content</h5>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let lesson of courseData.Material.value let i = index"
+                        class="list-group-item d-flex justify-content-between align-items-center"
+                        (click)="playVideo(lesson.link)" [routerLink]="['/student/course/lesson', i + 1]"
+                        style="cursor: pointer; transition: background-color 0.2s;"
+                        onmouseover="this.style.backgroundColor='#f8f9fa'"
+                        onmouseout="this.style.backgroundColor='white'">
+
+                        <div>
+                            <i class="bi bi-play-circle me-2 text-primary"></i>
+                            <span>{{ lesson.title }}</span>
+                            <span class="text-muted small ms-3">({{ lesson.duration }})</span>
+                        </div>
+
+                        <button class="btn btn-link text-decoration-none p-0" (click)="toggleLessonStatus(i, $event)">
+
+                            <i *ngIf="lesson.status" class="bi bi-check-circle-fill text-success fs-4"></i>
+
+                            <i *ngIf="!lesson.status" class="bi bi-circle text-muted fs-4"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div *ngIf="activeTab === 'assignment'">
+            <!-- <app-assignment-list></app-assignment-list> -->
+        </div>
+
+        <div *ngIf="activeTab === 'resources'">
+            <app-course-resources></app-course-resources>
+        </div>
+    </div>
+
+</div>
+
+<div class="container py-5 text-center" *ngIf="!courseData">
+    <h3 class="text-danger">Course not found!</h3>
+    <a routerLink="/student/my-courses" class="btn btn-secondary mt-3">Go Back</a>
+</div>

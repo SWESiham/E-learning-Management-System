@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'edit/:id', component: EditAssignment },
   { path: 'submit/:id', component: SubmitAssignment },
   { path: 'view/:id', component: ViewSubmition },
-  { path: 'grade/:id', component: GradeAssignment },
+  { path: 'grade', component: GradeAssignment },
 ];
 
 @NgModule({

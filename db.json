@@ -346,8 +346,8 @@
       "submissionDate": "2023-11-10",
       "answer": "https://github.com/omar/angular-todo",
       "status": "graded",
-      "grade": 95,
-      "feedback": "Great job! Clean code."
+      "grade": 70,
+      "feedback": "good work"
     },
     {
       "id": "ef2b",
@@ -357,9 +357,9 @@
       "studentName": "Omar Tarek",
       "submissionDate": "2025-12-05",
       "answer": "https://drive.google.com/drive/my-drive",
-      "status": "pending",
-      "grade": null,
-      "feedback": ""
+      "status": "graded",
+      "grade": 100,
+      "feedback": "Greate Job omar"
     }
   ],
   "assignments": [

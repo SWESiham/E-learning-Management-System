@@ -17,7 +17,14 @@ export class ApiSubmission {
     return this.http.post(this.apiURL, data);
   }
   getSubmissionById(submissionId: string) {
-    return this.http.get<any>(`${this.apiURL}/${submissionId}`);
+    return this.http.get(`${this.apiURL}/${submissionId}`);
   }
-
+  
+  gradeSubmission(submissionId: string, data: any) {
+    return this.http.put(`${this.apiURL}/${submissionId}`, data);
+  }
+  
+  getSubmissionsByCourseId(courseId: string) {
+    return this.http.get<any[]>(`${this.apiURL}?courseId=${courseId}`);
+  }
 }

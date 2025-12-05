@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Auth } from '../../../core/services/auth';
@@ -9,9 +9,14 @@ import { Auth } from '../../../core/services/auth';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {
+export class Navbar implements OnInit {
+  role: string = '';
 
   constructor(private router: Router,private _auth: Auth) { }
+  ngOnInit(): void {
+    const payload = this._auth.getUserPayload();
+    this.role = payload.role;  
+  }
 
   logout() {
     this._auth.logout();

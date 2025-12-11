@@ -1,0 +1,96 @@
+p{
+    color:#4A5565;
+}
+
+.container{
+    width:90%;
+    margin:0 auto;
+}
+
+.input-group{
+    width:30%;
+    min-width:380px;
+    border-radius:10px;
+}
+
+.custom-btn {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.custom-btn:hover {
+  background-color: #ececec;
+}
+
+.custom-menu {
+  background-color: #fff !important;
+  border: 1px solid #ddd;
+}
+
+.custom-menu .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.role-badge {
+  padding: 6px 10px;
+  border-radius: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+
+.admin {
+  background-color: #e03a2842;
+  color:#e74c3c;
+  padding: 3px 5px;
+  border-radius: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.instructor {
+  background-color: #d9bff58a;
+  color: #8200DB;
+  padding: 3px 5px;
+  border-radius: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.student {
+  color: #1447E6;
+  background-color:#DBEAFE;
+  padding: 3px 5px;
+  border-radius: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+
+.active-badge {
+  background-color: #DCFCE7; 
+  color: #008236;
+  border-radius:15px;
+}
+
+.inactive-badge {
+  background-color: #F3F4F6;
+  color: black !important;
+  border-radius:15px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#155DFC,#9810FA); 
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+

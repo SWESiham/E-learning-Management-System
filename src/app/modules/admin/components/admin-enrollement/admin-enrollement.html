@@ -1,0 +1,137 @@
+<div class="container">
+  <div
+    style="display: flex; flex-direction: row; justify-content: space-between; align-items: center"
+  >
+    <span>
+      <h3>Enrollment Management</h3>
+      <p>Manage student course enrollments</p>
+    </span>
+
+    <span>
+      <button class="btn-primary" (click)="openModal()">+ Enroll Student</button>
+    </span>
+  </div>
+
+  <div class="modal-overlay" *ngIf="showModal">
+    <div class="modal-content">
+      <h5>Enroll Student in Course</h5>
+      <button class="close-btn" (click)="closeModal()">×</button>
+
+      <label>Select Student</label>
+      <select [(ngModel)]="selectedStudentId">
+        <option value="" disabled selected>Choose a student..</option>
+        <option *ngFor="let student of students" [value]="student.id">
+          {{ student.fullname ?? student.username }}
+        </option>
+      </select>
+
+      <label>Select Course</label>
+      <select [(ngModel)]="selectedCourseId">
+        <option value="" disabled selected>Choose a course..</option>
+        <option *ngFor="let course of courses" [value]="course.id">
+          {{ course.title }}
+        </option>
+      </select>
+
+      <label>Enrollment Date</label>
+      <input type="date" [(ngModel)]="enrollmentDate" />
+
+      <div class="modal-actions">
+        <button class="btn-enroll" (click)="enrollStudent()">
+          Enroll Student
+         <img src="assets/images/enroll.svg" alt="enroll" />
+        </button>
+        <button class="btn-cancel" (click)="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: row; gap: 5%">
+    <app-activity-card title="Total enrollments"></app-activity-card>
+    <app-activity-card title="Total Instructors" [number]="4"></app-activity-card>
+  </div>
+
+  <div
+    style="
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 3%;
+      display: flex;
+      flex-direction: row;
+      gap: 1%;
+    "
+  >
+    <div class="input-group">
+      <span class="input-group-text bg-white border-end-0">
+        <img src="assets/images/search.svg" alt="search" />
+      </span>
+
+      <input
+        class="form-control border-start-0"
+        type="search"
+        placeholder="Search by student or course"
+        aria-label="Search"
+      />
+    </div>
+    <div class="dropdown flex-grow-1">
+      <button class="btn dropdown-toggle custom-btn w-100" type="button" data-bs-toggle="dropdown">
+        All Enrollments
+      </button>
+      <!-- <ul class="dropdown-menu custom-menu w-100">
+        <li><a class="dropdown-item" href="#"> All Roles</a></li>
+        <li><a class="dropdown-item" href="#">Instructors</a></li>
+        <li><a class="dropdown-item" href="#">Students</a></li>
+      </ul> -->
+    </div>
+  </div>
+
+  <table class="table table-hover align-middle mt-4 custom-table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Student</th>
+        <th scope="col">Course</th>
+        <th scope="col">Enrolled Date</th>
+        <th scope="col">Progress</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enroll of studentsWithCourses">
+        <td>
+          <div class="d-flex align-items-center gap-2">
+           <div class="avatar">
+              {{ getInitials(enroll.studentName) }}
+            </div>
+            <div>
+              <div style="font-weight: bold">{{ enroll.studentName }}</div>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <span style="padding-right: 5px">
+            <img src="assets/images/course.svg" />
+          </span>
+          <span>{{ enroll.courseName }}</span>
+        </td>
+
+        <td>
+          {{ enroll.enrollmentDate }}
+        </td>
+
+        <td>{{ enroll.progress }} %</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Course Overview</h4>
+
+  <div class="cards-grid">
+    <app-overview-card
+      *ngFor="let item of studentsWithCourses"
+      [courseName]="item.courseName"
+      [instructorName]="item.instructorName"
+    ></app-overview-card>
+  </div>
+</div>

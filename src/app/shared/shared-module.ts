@@ -5,12 +5,16 @@ import { Navbar } from './components/navbar/navbar';
 import { Footer } from '../modules/home/components/footer/footer';
 import { Profile } from './components/profile/profile';
 import { FormsModule } from '@angular/forms';
+import { ActivityCard } from './activity-card/activity-card';
+import { OverviewCard } from './overview-card/overview-card';
 
 @NgModule({
   declarations: [
     Navbar,
     Footer,
-    Profile
+    Profile,
+    ActivityCard,
+    OverviewCard
   ],
   imports: [
     CommonModule,
@@ -19,7 +23,9 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     Navbar,
-    Footer
+    Footer,
+    ActivityCard,
+    OverviewCard
   ]
 })
 export class SharedModule { }

@@ -41,7 +41,7 @@ export class Login {
           } else if(user.role.toLowerCase() === 'student') {
             this._router.navigate(['/student/my-courses']);
           }else if(user.role.toLowerCase() === 'admin') {
-            this._router.navigate(['']);
+            this._router.navigate(['/admin']);
           }
         } else {
           alert("Invalid Credentials!");

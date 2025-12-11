@@ -57,6 +57,27 @@
                     </li>
                 </ul>
 
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3" *ngIf="isAdmin()">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2" routerLink="/admin">
+                            <img src="assets/images/Icon.svg" alt="icon" width="20" height="20">
+                           User Manager
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2" href="/admin/enrollement">
+                            <img src="assets/images/Icon5.svg" alt="icon" width="20" height="20">
+                            Enrollements
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2" routerLink="/admin/coursecatalog/">
+                            <img src="assets/images/Icon1.svg" alt="icon" width="20" height="20">
+                            Course Catalog
+                        </a>
+                    </li>
+                </ul>
+
                 <div class="d-flex align-items-center gap-3">
                     <a class="text-decoration-none text-dark d-flex align-items-center gap-2" routerLink="/profile">
                         <img src="assets/images/Icon3.svg" alt="profile" width="24" height="24" class="rounded-circle">

@@ -140,7 +140,7 @@ ngOnInit(): void {
     title: ['', Validators.required],
     description: ['', Validators.required],
     authorName: [''], // Default empty
-    authorId: [''],   // Default empty
+    authorId: [{ value: '' }], 
     price: ['', Validators.required],
     hours: ['', Validators.required],
     category: ['', Validators.required],
@@ -154,13 +154,13 @@ ngOnInit(): void {
   const payload = this._auth.getUserPayload();
   
   if (payload && this._auth.isLoggedInWithRole('Instructor')) {
-    this.authorName = payload.fullname;
+    this.authorName = payload.username;
     this.authorId = payload.id;
 
     // Use patchValue to update only specific fields safely
     this.courseForm.patchValue({
       authorName: this.authorName,
-      authorId: this.authorId,
+      authorId: { value: this.authorId},
       // If you have existing data for objectives/material, patch them here too
     });
     console.log("this.authorName", this.authorName);

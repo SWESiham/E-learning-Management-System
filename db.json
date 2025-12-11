@@ -111,7 +111,7 @@
   "courses": [
     {
       "id": "e386",
-      "title": "Python for Machine Learning",
+      "title": "Python for Machine Learning2",
       "description": "Learn Python from scratch and master the libraries used in Machine Learning like NumPy and Pandas.",
       "authorName": {
         "value": "Dr. Ahmed Khaled"
@@ -122,7 +122,7 @@
       "price": 50,
       "hours": 15,
       "category": "Machine Learning",
-      "imageUrl": "https://media.licdn.com/dms/image/v2/D5612AQGNKrg-rb4miQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1692261810930?e=2147483647&v=beta&t=g7Hrq0Y_ghds3fu3h1_XDM6DbUw6oAAZTngFcZ588hA",
+      "imageUrl": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/python/logo.png",
       "learningObjectives": {
         "value": [
           "Understand Python Syntax",
@@ -313,6 +313,125 @@
             "title": "Node.js Tutorial",
             "duration": 30,
             "link": "https://www.youtube.com/embed/fBNz5xF-Kx4",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "ddd4",
+      "title": "play",
+      "description": "play",
+      "authorId": "2",
+      "price": 10,
+      "hours": 1,
+      "category": "Machine Learning",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "p1",
+          "p2"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 10,
+            "link": "http",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "336d",
+      "title": "play",
+      "description": "play",
+      "authorName": "Dr. Ahmed Khaled",
+      "authorId": "2",
+      "price": 1,
+      "hours": 1,
+      "category": "Web Development",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "pla",
+          ""
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 10,
+            "link": "http",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "f1f8",
+      "title": "plllala",
+      "description": "plapalpa",
+      "authorName": "Dr. Ahmed Khaled",
+      "authorId": "2",
+      "price": 2,
+      "hours": 10,
+      "category": "Game Development",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "pp",
+          "pl"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 10,
+            "link": "http",
+            "status": false
+          },
+          {
+            "title": "intro1",
+            "duration": 2,
+            "link": "http",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "e274",
+      "title": "testing33",
+      "description": "test testte s",
+      "authorName": "Dr. Ahmed Khaled",
+      "authorId": {
+        "value": "2"
+      },
+      "price": 19,
+      "hours": 10,
+      "category": "Data Science",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "pl",
+          "pl2"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 1,
+            "link": "http:",
             "status": false
           }
         ]

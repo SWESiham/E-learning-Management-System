@@ -9,7 +9,7 @@ import { GetInstructorCourses } from './get-instructor-courses/get-instructor-co
 import { CatalogCourses } from './catalog-courses/catalog-courses';
 import { InstructorCourseDetails } from './instructor-course-details/instructor-course-details';
 import { AssignmentModule } from '../assignment/assignment-module';
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,11 @@ import { AssignmentModule } from '../assignment/assignment-module';
     FormsModule,
     ToastrModule,
     ReactiveFormsModule,
-    AssignmentModule
+    AssignmentModule,
+    RouterModule
+  ],
+  exports: [
+    CatalogCourses
   ]
 })
 export class CourseModule { }

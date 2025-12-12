@@ -9,6 +9,11 @@ export class StudentService {
 
   apiURL = 'http://localhost:3000';
 
+
+  getStudents(){
+    return this._http.get(`${this.apiURL}/users?role=Student`);
+  }
+
   getStudeEnrollments(studentId: string) {
     return this._http.get(`${this.apiURL}/enrollments?studentId=${studentId}`);
   }

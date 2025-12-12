@@ -1,0 +1,24 @@
+.card{
+ width:350px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ padding:15px;
+ border-radius:14px;
+ box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+ font-size:20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+p{
+    font-size:14px;
+    color:#4A5565;
+}
+
+h4{
+      font-size:16px;  
+}
+

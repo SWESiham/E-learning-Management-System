@@ -1,9 +1,19 @@
 <div class="container py-5">
     
+    <div class="d-flex justify-content-between align-items-center mb-4">
     <div class="mb-4">
         <h2 class="fw-bold mb-2">Course Catalog</h2>
         <p class="text-muted">Explore our collection of courses</p>
-    </div>
+     </div>
+  <button
+   *ngIf="isAdmin"
+    class="btn btn-primary d-flex align-items-center gap-2"
+    (click)="navigateToCreateCourse()"
+  >
+    <i class="bi bi-plus-lg"></i> Create Course
+  </button>
+</div>
+   
 
     <div class="input-group mb-4 shadow-sm">
         <span class="input-group-text search-icon-group text-muted ps-3">
@@ -23,7 +33,8 @@
 
     <div class="row g-4">
         <div *ngFor="let course of courses" class="col-md-6 col-lg-4 cursorPointer">
-            <div class="card h-100 border-0 shadow-sm course-card overflow-hidden">
+            <div class="card h-100 border-0 shadow-sm course-card overflow-hidden"
+                [routerLink]="isAdmin ? ['../viewcourse', course.id] : ['/student/course', course.id]">
                 <div class="card-img-container position-relative">
                     <img src={{course.imageUrl}} class="card-img-top" alt="Web Dev">
                 </div>
@@ -33,8 +44,12 @@
                     <p class="card-text text-muted small mt-2">{{course.description}}</p>
                 </div>
                 <span style="height: 1px; background-color: #e0e0e0" class="w-100 mb-2 mt-2 " ></span>
+               <div *ngIf="isAdmin">
+                   <button type="button" (click)="deleteCourse(course.id)" class="btn btn-light border px-4 text-danger text-center mb-2 mt-2" style="width: 80%;background-color:#EFEFEF;margin-left: 8%;">Delete Course</button>
+
+               </div>
                 <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center pb-4 pt-0">
-                    <small class="text-muted">{{course.authorName.value}} </small>
+                    <small class="text-muted">{{course.authorName}} </small>
                     <span class="text-primary fw-bold">${{course.price}}</span>
                 </div>
             </div>

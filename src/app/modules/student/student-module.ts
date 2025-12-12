@@ -24,6 +24,10 @@ import { CatalogCourses } from './components/catalog-courses/catalog-courses';
     StudentRoutingModule,
     ReactiveFormsModule,
     FormsModule
+  ],
+  exports: [
+    CatalogCourses,
+    CourseResources
   ]
 })
 export class StudentModule { }

@@ -33,7 +33,12 @@ const routes: Routes = [
   },
   { 
     path: 'assignments', loadChildren: () => import('./modules/assignment/assignment-module').then(m => m.AssignmentModule) 
-  }
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./modules/admin/admin-module').then(m => m.AdminModule)
+  },
+
 ];
 
 @NgModule({

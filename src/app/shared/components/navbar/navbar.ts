@@ -27,8 +27,8 @@ export class Navbar {
   isInstructor(): boolean {
     return this._auth.getUserRole() == 'Instructor';
   }
-  idAdmin(): boolean {
-    return this._auth.getUserRole() == 'Admin';
+  isAdmin(): boolean {
+    return this._auth.getUserRole().toLowerCase() == 'admin';
   }
 
 }

@@ -18,12 +18,15 @@ export class CourseResources {
     const userId = localStorage.getItem('userId') || '';
     this.apiCourseService.getCourse(userId).subscribe((data: any) => {
       this.courses = data;
-      this.courses.filter((course: any) => {
-        this.resources = course.resourse;
-        console.log(this.resources);
-      });
-    });
-  }
+      this.courses.forEach((course: any) => {
+        if (course.Resources?.value) {
+          this.resources.push(...course.Resources.value);
+          console.log(this.resources)
+        }
+      }
+    )
+  })
+}
 
 
 }

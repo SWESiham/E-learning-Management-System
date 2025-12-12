@@ -14,7 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditCourse {
   constructor( private _router: Router,private toastr: ToastrService,private _auth: Auth,private _course: ApiCourse,private _formBuilder: FormBuilder,private route: ActivatedRoute) {
-     this.courseForm = this._formBuilder.group({
+    
+    this.courseForm = this._formBuilder.group({
     title: ['', Validators.required],
     description: ['', Validators.required],
     authorName: ['', Validators.required],
@@ -28,6 +29,8 @@ export class EditCourse {
     assignments: this._formBuilder.array([])
   });
   }
+    loading:boolean = true;
+    isAdmin: boolean = false;
   course: any;
   courseId: any;
   courseForm: FormGroup ;
@@ -115,7 +118,11 @@ export class EditCourse {
     this._course.editCourse(this.courseId!, this.courseForm.value).subscribe((res: any) => {
       console.log("res", res);
       this.showToast('success', 'Course Updated Successfully');
-      this._router.navigate(['course/instructorCourses']);
+      if(this.isAdmin)
+      {
+        this._router.navigate(['/admin/coursecatalog']);
+      }
+      else this._router.navigate(['course/instructorCourses']);
     })
   }
   showToast(type: any, message: any) {
@@ -137,10 +144,15 @@ export class EditCourse {
     this.courseId=id
     console.log("id", id);
      const payload= this._auth.getUserPayload()
-      if(payload&&this._auth.isLoggedInWithRole('Instructor')){
+      if(payload&&this._auth.isLoggedInWithRole('Instructor')||payload&&this._auth.isLoggedInWithRole('admin')){
+        if(this._auth.isLoggedInWithRole('admin'))
+        {
+          this.isAdmin=true
+        }
    this._course.getCourse(id!).subscribe((res: any) => {
       this.course = res;
       console.log("this.course", this.course);
+      this.loading=false
        this.learningObjectives= [...this.course.learningObjectives.value]
       this.lectures= [...this.course.Material.value]
         this.courseForm = this._formBuilder.group({

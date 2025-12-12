@@ -1,9 +1,17 @@
 <div class="add_course">
-    <div class="add_course_cont">
+  <div *ngIf="loading">
+            <div class="text-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+    <div class="add_course_cont" *ngIf="!loading">
+      
 <div class=" mt-5">
-            <h2 class="text-navy fw-normal mb-1">Create New Course</h2>
+            <h2 class="text-navy fw-normal mb-1">Edit  Course</h2>
             
-            <p class="text-secondary fs-5">Set up your course details and curriculum</p>
+            <p class="text-secondary fs-5">Edit course details and curriculum</p>
         </div>
     <div class="mt-5 w-100">
         <div class="row justify-content-center">

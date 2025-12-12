@@ -111,7 +111,7 @@
   "courses": [
     {
       "id": "e386",
-      "title": "Python for Machine Learning2",
+      "title": "Python for Machine Learning23",
       "description": "Learn Python from scratch and master the libraries used in Machine Learning like NumPy and Pandas.",
       "authorName": {
         "value": "Dr. Ahmed Khaled"
@@ -126,8 +126,7 @@
       "learningObjectives": {
         "value": [
           "Understand Python Syntax",
-          "Master NumPy Arrays",
-          "Data Analysis with Pandas"
+          "Master NumPy Arrays"
         ]
       },
       "Material": {
@@ -140,7 +139,7 @@
           },
           {
             "title": "Setup Environment",
-            "duration": 15,
+            "duration": 153,
             "link": "https://www.youtube.com/embed/t8pPdKYpowI",
             "status": true
           }

@@ -5,23 +5,14 @@
     </a>
 
     <div class="card border-0 shadow-sm mb-4 d-flex align-items-center overflow-hidden">
-
-        <div *ngIf="!currentVideoUrl" class="bg-dark position-relative" style="width: 100%; height: 600px;">
+        <div class="bg-dark position-relative" style="width: 100%; height: 600px;">
             <img [src]="courseData.imageUrl" class="w-100 h-100 object-fit-cover opacity-50" alt="Course Image">
 
-            <button (click)="playVideo(courseData.Material.value[0].link)"
+            <a [href]="courseData.Material.value[0].link" target="_blank"
                 class="btn btn-primary rounded-circle position-absolute top-50 start-50 translate-middle p-3">
                 <i class="bi bi-play-fill fs-1"></i>
-            </button>
+            </a>
         </div>
-
-        <div *ngIf="currentVideoUrl" class="bg-black" style=" width: 100%; height: 600px;">
-            <iframe [src]="currentVideoUrl" class="w-100 h-100" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-
     </div>
 
     <div class="card-body p-4">
@@ -36,22 +27,26 @@
 
     <ul class="nav nav-tabs mb-4">
         <li class="nav-item">
-            <button class="nav-link" [class.active]="activeTab === 'overview'" (click)="setActiveTab('overview')" [routerLink]="['./']">
+            <button class="nav-link" [class.active]="activeTab === 'overview'" (click)="setActiveTab('overview')"
+                [routerLink]="['./']">
                 Course Overview
             </button>
         </li>
         <li class="nav-item">
-            <button class="nav-link" [class.active]="activeTab === 'content'" (click)="setActiveTab('content')" [routerLink]="['./']">
+            <button class="nav-link" [class.active]="activeTab === 'content'" (click)="setActiveTab('content')"
+                [routerLink]="['./']">
                 Course Content
             </button>
         </li>
         <li class="nav-item">
-            <button class="nav-link" [class.active]="activeTab === 'assignment'" (click)="setActiveTab('assignment')" [routerLink]="['assignments']">
+            <button class="nav-link" [class.active]="activeTab === 'assignment'" (click)="setActiveTab('assignment')"
+                [routerLink]="['assignments']">
                 Assignments
             </button>
         </li>
         <li class="nav-item">
-            <button class="nav-link" [class.active]="activeTab === 'resources'" (click)="setActiveTab('resources')" [routerLink]="['./']">
+            <button class="nav-link" [class.active]="activeTab === 'resources'" (click)="setActiveTab('resources')"
+                [routerLink]="['./']">
                 Resources
             </button>
         </li>
@@ -76,27 +71,24 @@
             </p>
         </div>
 
-        <div *ngIf="activeTab === 'content'">
+       <div *ngIf="activeTab === 'content'">
             <div class="card p-4 mb-4">
                 <h5 class="fw-bold mb-3">Course Content</h5>
                 <ul class="list-group list-group-flush">
                     <li *ngFor="let lesson of courseData.Material.value let i = index"
                         class="list-group-item d-flex justify-content-between align-items-center"
-                        (click)="playVideo(lesson.link)" [routerLink]="['/student/course/lesson', i + 1]"
-                        style="cursor: pointer; transition: background-color 0.2s;"
+                        style="transition: background-color 0.2s;"
                         onmouseover="this.style.backgroundColor='#f8f9fa'"
                         onmouseout="this.style.backgroundColor='white'">
 
-                        <div>
+                        <a [href]="lesson.link" target="_blank" class="d-flex align-items-center text-decoration-none text-dark flex-grow-1">
                             <i class="bi bi-play-circle me-2 text-primary"></i>
                             <span>{{ lesson.title }}</span>
                             <span class="text-muted small ms-3">({{ lesson.duration }})</span>
-                        </div>
+                        </a>
 
-                        <button class="btn btn-link text-decoration-none p-0" (click)="toggleLessonStatus(i, $event)">
-
+                        <button class="btn btn-link text-decoration-none p-0 ms-3" (click)="toggleLessonStatus(i, $event)">
                             <i *ngIf="lesson.status" class="bi bi-check-circle-fill text-success fs-4"></i>
-
                             <i *ngIf="!lesson.status" class="bi bi-circle text-muted fs-4"></i>
                         </button>
                     </li>
@@ -105,7 +97,7 @@
         </div>
 
         <div *ngIf="activeTab === 'assignment'">
-             <router-outlet></router-outlet>
+            <router-outlet></router-outlet>
         </div>
 <div *ngIf="activeTab === 'resources'">
             <div class="card p-4 mb-4">

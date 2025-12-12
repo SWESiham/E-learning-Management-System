@@ -93,9 +93,9 @@ export class CourseDetails implements OnInit {
         }
     }
   }
-  playVideo(link: string) {
-  this.currentVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(link);
-}
+//   playVideo(link: string) {
+//   this.currentVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(link);
+// }
 
   setActiveTab(tabName: string) {
     this.activeTab = tabName;

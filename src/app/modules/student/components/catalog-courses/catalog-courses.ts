@@ -21,6 +21,7 @@ export class CatalogCourses {
   ngOnInit(): void {
     this._apiCourse.getCourses().subscribe((res: any) => {
       this.courses = res;
+      this.courses = this.courses.filter(c => !c.isArchived);
       console.log("this.courses", this.courses);
     // const user = this._auth.getUserPayload();
     //   if (user && user.id) {
@@ -48,6 +49,7 @@ export class CatalogCourses {
     else {
       this._apiCourse.getCoursesByCategory(category).subscribe((res: any) => {
         this.courses = res;
+        this.courses = this.courses.filter(c => !c.isArchived);
         console.log("this.courses", this.courses);
 
       })

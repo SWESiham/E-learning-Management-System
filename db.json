@@ -436,6 +436,94 @@
         ]
       },
       "assignments": []
+    },
+    {
+      "id": "f26c",
+      "title": "pxy",
+      "description": "pzy",
+      "authorId": "2",
+      "price": 10,
+      "hours": 10,
+      "category": "Other",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "pla",
+          "pp"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 10,
+            "link": "http:",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "8147",
+      "title": "playyy",
+      "description": "playyyplayyyplayyyplayyyplayyyplayyy",
+      "authorId": {
+        "value": "2"
+      },
+      "price": 10,
+      "hours": 10,
+      "category": "Other",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "lpppp"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 10,
+            "link": "http",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "5a57",
+      "title": "test44",
+      "description": "test44test44test44test44test44",
+      "authorId": "3",
+      "price": 100,
+      "hours": 10,
+      "category": "Other",
+      "imageUrl": "placeholder.png",
+      "learningObjectives": {
+        "value": [
+          "testq",
+          "testr"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 10,
+            "link": "htttp",
+            "status": false
+          },
+          {
+            "title": "intro2",
+            "duration": 10,
+            "link": "http",
+            "status": false
+          }
+        ]
+      },
+      "assignments": []
     }
   ],
   "enrollments": [

@@ -23,7 +23,7 @@ export class ApiCourse {
     return this.http.get(this.apiURL);
   }
   getCousreByInstructorId(id: string) {
-    const courses=this.getCourses().pipe(map((res: any) => res.filter((course: any) => course.authorId.value === id)));
+    const courses=this.getCourses().pipe(map((res: any) => res.filter((course: any) =>course.authorId === id)));
     console.log("APIcourses", courses);
     return courses
   }

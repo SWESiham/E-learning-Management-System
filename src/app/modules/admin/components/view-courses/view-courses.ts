@@ -32,7 +32,7 @@ export class ViewCourses implements OnInit {
   loadCourseDetails(): void {
     this._api.getCourse(this.courseId).subscribe((data: any) => {
       this.courseData = data;
-      console.log(this.courseData);
+      console.log("this.courseData,", this.courseData);
     });
 
     this._api.getEnrollmentsByCourseId(this.courseId).subscribe((data: any) => {

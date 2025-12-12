@@ -50,6 +50,7 @@
       "authorId": "1bc7",
       "price": 0,
       "hours": 24,
+      "isEnrolled": false,
       "category": "Machine Learning",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
       "learningObjectives": {
@@ -98,6 +99,7 @@
       "authorId": "1bc7",
       "price": 0,
       "hours": 20,
+      "isEnrolled": false,
       "category": "Web Development",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/1182px-Node.js_logo_2015.svg.png?20150315010906",
       "learningObjectives": {
@@ -144,6 +146,7 @@
       "authorName": "Ali Ali",
       "authorId": "7332",
       "price": 0,
+      "isEnrolled": false,
       "hours": 25,
       "category": "UI/UX Design",
       "imageUrl": "https://thumbs.dreamstime.com/b/futuristic-technology-interaction-human-hand-robotic-arm-over-computer-screen-data-visualization-analytics-404054975.jpg?w=768",
@@ -184,40 +187,50 @@
         ]
       },
       "assignments": []
+    },
+    {
+      "id": "f567",
+      "title": "Software testing",
+      "description": "Software testing is the systematic process of evaluating a software application to ensure it functions correctly, securely, and efficiently, identifying bugs, gaps, and defects to meet user expectations and business requirements before it goes live, ultimately enhancing quality, performance, and user experience",
+      "authorName": "Ali Ali",
+      "authorId": "7332",
+      "price": 0,
+      "hours": 22,
+      "isEnrolled": false,
+      "category": "Other",
+      "imageUrl": "data:image/jpeg;base64,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",
+      "learningObjectives": {
+        "value": [
+          "test software"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 4,
+            "link": "https://youtu.be/SY9RYhr6Shw?si=vvs0Tjd1nfuC_dcY",
+            "status": false
+          }
+        ]
+      },
+      "Resources": {
+        "value": [
+          {
+            "title": "intro",
+            "description": "intro",
+            "link": "https://drive.google.com/file/d/1qyT__ZGEmn5W4hJo7jxHY8PtecYvBeRP/view?usp=drive_link"
+          }
+        ]
+      }
     }
   ],
   "enrollments": [
     {
-      "id": "501",
-      "studentId": "4",
-      "courseId": "e386",
-      "progress": 100,
-      "enrollmentDate": "2023-11-01"
-    },
-    {
-      "id": "502",
-      "studentId": "4",
-      "courseId": null,
-      "progress": 50,
-      "enrollmentDate": "2023-11-05"
-    },
-    {
-      "id": "710a",
-      "studentId": "4",
-      "courseId": null,
-      "progress": 100
-    },
-    {
-      "id": "5215",
-      "studentId": "278f",
-      "courseId": null,
-      "progress": 100
-    },
-    {
-      "id": "e6e9",
-      "studentId": "278f",
-      "courseId": "6d35",
-      "progress": 100
+      "id": "00c0",
+      "studentId": "ba9f",
+      "courseId": "0e70",
+      "progress": 0
     }
   ],
   "submissions": [

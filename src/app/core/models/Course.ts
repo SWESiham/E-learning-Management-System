@@ -9,6 +9,7 @@ export interface Course{
   authorName:string,
   authorId:string,
   price:number,
+  isEnrolled:boolean,
   hours:number,
   category:string,
   Material:Lecture[],

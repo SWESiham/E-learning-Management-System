@@ -152,7 +152,7 @@ export class EditCourse {
           price: [this.course.price, Validators.required],
           hours: [this.course.hours, Validators.required],
           category: [this.course.category, Validators.required],
-          imageUrl: ['placeholder.png'],
+          imageUrl:this.course.imageUrl || ['placeholder.png'],
           learningObjectives:  [{ value: this.learningObjectives }],
            Material: [{ value: this.lectures }],
           assignments: this._formBuilder.array([])

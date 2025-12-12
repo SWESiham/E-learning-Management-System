@@ -6,7 +6,7 @@
       "email": "omar@student.com",
       "password": "123",
       "role": "admin",
-      "isActive": false,
+      "isActive": true,
       "bio": "junior web developer",
       "location": "15 mohamed ali street,cairo",
       "phone": "01203456789",
@@ -26,7 +26,7 @@
       "email": "mona@student.com",
       "password": "123",
       "role": "Student",
-      "isActive": false
+      "isActive": true
     },
     {
       "id": "6830",
@@ -99,6 +99,7 @@
     {
       "id": "e386",
       "title": "Python for Machine Learning23",
+      "isArchived": false,
       "description": "Learn Python from scratch and master the libraries used in Machine Learning like NumPy and Pandas.",
       "authorName": {
         "value": "Dr. Ahmed Khaled"
@@ -135,80 +136,9 @@
       "assignments": []
     },
     {
-      "id": "6f81",
-      "title": "Frontend Web Development",
-      "description": "Become a Frontend Developer by learning HTML, CSS, JavaScript and React.",
-      "authorName": {
-        "value": "Dr. Ahmed Khaled"
-      },
-      "authorId": {
-        "value": "2"
-      },
-      "price": 40,
-      "hours": 20,
-      "category": "Web Development",
-      "imageUrl": "https://placehold.co/600x400/png?text=Frontend",
-      "learningObjectives": {
-        "value": [
-          "Build responsive websites",
-          "Learn Flexbox and Grid",
-          "JavaScript ES6+"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "HTML5 Crash Course",
-            "duration": 25,
-            "link": "https://www.youtube.com/embed/qz0aGYrrlhU",
-            "status": true
-          },
-          {
-            "title": "CSS3 Fundamentals",
-            "duration": 30,
-            "link": "https://www.youtube.com/embed/1Rs2ND1ryYc",
-            "status": false
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
-      "id": "567d",
-      "title": "UI/UX Design Fundamentals",
-      "description": "Learn the basics of User Interface and User Experience design using Figma.",
-      "authorName": {
-        "value": "Dr. Ahmed Khaled"
-      },
-      "authorId": {
-        "value": "2"
-      },
-      "price": 0,
-      "hours": 12,
-      "category": "Design",
-      "imageUrl": "https://placehold.co/600x400/png?text=UI+UX",
-      "learningObjectives": {
-        "value": [
-          "Wireframing basics",
-          "Prototyping in Figma",
-          "Design Systems"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "What is UI/UX?",
-            "duration": 12,
-            "link": "https://www.youtube.com/embed/c9Wg6Cb_YlU",
-            "status": true
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
       "id": "9861",
       "title": "Data Science with Pandas",
+      "isArchived": false,
       "description": "Deep dive into data analysis and visualization using Python and Pandas.",
       "authorName": {
         "value": "Dr. Ahmed Khaled"
@@ -240,41 +170,9 @@
       "assignments": []
     },
     {
-      "id": "1636",
-      "title": "Flutter Mobile Apps",
-      "description": "Build native mobile applications for iOS and Android using Flutter and Dart.",
-      "authorName": {
-        "value": "Dr. Ahmed Khaled"
-      },
-      "authorId": {
-        "value": "2"
-      },
-      "price": 55,
-      "hours": 25,
-      "category": "Mobile Development",
-      "imageUrl": "https://placehold.co/600x400/png?text=Flutter",
-      "learningObjectives": {
-        "value": [
-          "Dart Programming",
-          "Flutter Widgets",
-          "State Management"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "Flutter Course for Beginners",
-            "duration": 40,
-            "link": "https://www.youtube.com/embed/x0uinJvhNxI",
-            "status": false
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
       "id": "16ed",
       "title": "Backend with Node.js",
+      "isArchived": true,
       "description": "Learn how to build scalable backend APIs using Node.js and Express.",
       "authorName": {
         "value": "Dr. Ahmed Khaled"
@@ -308,6 +206,7 @@
     {
       "id": "ddd4",
       "title": "play",
+      "isArchived": true,
       "description": "play",
       "authorId": "2",
       "price": 10,
@@ -335,6 +234,7 @@
     {
       "id": "336d",
       "title": "play",
+      "isArchived": false,
       "description": "play",
       "authorName": "Dr. Ahmed Khaled",
       "authorId": "2",
@@ -353,40 +253,6 @@
           {
             "title": "intro",
             "duration": 10,
-            "link": "http",
-            "status": false
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
-      "id": "f1f8",
-      "title": "plllala",
-      "description": "plapalpa",
-      "authorName": "Dr. Ahmed Khaled",
-      "authorId": "2",
-      "price": 2,
-      "hours": 10,
-      "category": "Game Development",
-      "imageUrl": "placeholder.png",
-      "learningObjectives": {
-        "value": [
-          "pp",
-          "pl"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "intro",
-            "duration": 10,
-            "link": "http",
-            "status": false
-          },
-          {
-            "title": "intro1",
-            "duration": 2,
             "link": "http",
             "status": false
           }
@@ -422,7 +288,8 @@
           }
         ]
       },
-      "assignments": []
+      "assignments": [],
+      "isArchived": true
     },
     {
       "id": "f26c",
@@ -449,7 +316,8 @@
           }
         ]
       },
-      "assignments": []
+      "assignments": [],
+      "isArchived": true
     },
     {
       "id": "8147",
@@ -477,7 +345,8 @@
           }
         ]
       },
-      "assignments": []
+      "assignments": [],
+      "isArchived": false
     },
     {
       "id": "5a57",
@@ -510,7 +379,8 @@
           }
         ]
       },
-      "assignments": []
+      "assignments": [],
+      "isArchived": true
     },
     {
       "id": "6d35",
@@ -551,20 +421,20 @@
     {
       "id": "502",
       "studentId": "4",
-      "courseId": "6f81",
+      "courseId": null,
       "progress": 50,
       "enrollmentDate": "2023-11-05"
     },
     {
       "id": "710a",
       "studentId": "4",
-      "courseId": "567d",
+      "courseId": null,
       "progress": 100
     },
     {
       "id": "5215",
       "studentId": "278f",
-      "courseId": "567d",
+      "courseId": null,
       "progress": 100
     },
     {
@@ -624,7 +494,7 @@
     },
     {
       "id": "305",
-      "courseId": "1636",
+      "courseId": null,
       "title": "Mobile App Design",
       "description": "Design a wireframe for a mobile app using Figma.",
       "dueDate": "2025-12-30",

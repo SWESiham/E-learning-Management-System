@@ -24,7 +24,6 @@ export class CatalogCourses {
      this._apiCourse.getCourses().subscribe((res: any) => {
        this.courses = res;
        console.log("this.courses", this.courses);
-       
      })
    }
    coursesFilter(category: string) {
@@ -62,4 +61,22 @@ export class CatalogCourses {
   { queryParams: { isAdmin: this.isAdmin } });
   }
 
+ArchiveCourse(id:string){ 
+  this._apiCourse.ArchiveCourse(id).subscribe(() => {
+    this.courses = this.courses.filter(c => c.id !== id);
+  });
+
+}
+
+toggleArchive(course: any) {
+  if (course.isArchived) {
+    this._apiCourse.UnarchiveCourse(course.id).subscribe(() => {
+      course.isArchived = false;
+    });
+  } else {
+    this._apiCourse.ArchiveCourse(course.id).subscribe(() => {
+      course.isArchived = true;
+    });
+  }
+}
 }

@@ -16,6 +16,7 @@ export class Register {
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     confirmPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
     role: new FormControl('', Validators.required),
+    isActive: new FormControl(false),
     agreeTerms: new FormControl(false, Validators.requiredTrue)
   })
 

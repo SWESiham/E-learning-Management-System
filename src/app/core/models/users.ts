@@ -8,4 +8,5 @@ export interface Users {
     phone: string,
     location: string;
     image:string,
+    isActive: boolean
 }

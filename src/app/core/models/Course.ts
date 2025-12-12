@@ -3,6 +3,7 @@ import { Lecture } from "./Material";
 import { resource } from "./Resource";
 export interface Course{
   id:string,
+  isArchieved:boolean,
   title:string,
   description:string,
   authorName:string,

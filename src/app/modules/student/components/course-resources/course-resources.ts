@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ApiCourse } from '../../../course/api-course';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-course-resources',
@@ -7,10 +9,21 @@ import { Component } from '@angular/core';
   styleUrl: './course-resources.css',
 })
 export class CourseResources {
-  resources = [
-    { name: 'Course Syllabus.pdf', size: '2.4 MB', path: 'assets/resources/syllabus.pdf' },
-    { name: 'Code Examples.zip', size: '15.8 MB', path: 'assets/resources/code.zip' },
-    { name: 'Reference Guide.pdf', size: '5.2 MB', path: 'assets/resources/guide.pdf' },
-    { name: 'Cheat Sheet.pdf', size: '1.1 MB', path: 'assets/resources/cheat.pdf' }
-  ];
+  constructor(private apiCourseService: ApiCourse, private _http: HttpClient) { }
+  
+  resources: any[] = [];
+  courses: any[] = [];
+
+  ngOnInit() {
+    const userId = localStorage.getItem('userId') || '';
+    this.apiCourseService.getCourse(userId).subscribe((data: any) => {
+      this.courses = data;
+      this.courses.filter((course: any) => {
+        this.resources = course.resourse;
+        console.log(this.resources);
+      });
+    });
+  }
+
+
 }

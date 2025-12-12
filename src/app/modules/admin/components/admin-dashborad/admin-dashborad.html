@@ -2,8 +2,8 @@
   <h3>User Management</h3>
   <p>Manage user accounts, roles, and permissions</p>
   <div style="display: flex; flex-direction: row; gap: 5%">
-    <app-activity-card></app-activity-card>
-    <app-activity-card title="Total Instructors" [number]="4"></app-activity-card>
+    <app-activity-card title="Total Students" [number]="studentCount"></app-activity-card>
+    <app-activity-card title="Total Instructors" [number]="instractCount"></app-activity-card>
   </div>
 
   <div
@@ -20,24 +20,11 @@
   >
     <div class="input-group">
       <span class="input-group-text bg-white border-end-0">
-        <img src="assets/images/search.svg" alt="search" />
+        <img src="assets/images/search.svg" alt="search"(click)="Search()" />
       </span>
-      <input class="form-control border-start-0" type="search" placeholder="Search users" />
+      <input [(ngModel)]="searchTerm" class="form-control border-start-0" type="search" placeholder="Search users" />
     </div>
-    <div class="dropdown flex-grow-1">
-      <button class="btn dropdown-toggle custom-btn w-100" type="button" data-bs-toggle="dropdown">
-        {{ selectedRole || 'All Roles' }}
-      </button>
-      <ul class="dropdown-menu custom-menu w-100">
-        <li><a class="dropdown-item" role="button" (click)="filterByRole('')">All Roles</a></li>
-        <li>
-          <a class="dropdown-item" role="button" (click)="filterByRole('admin')">Instructors</a>
-        </li>
-        <li>
-          <a class="dropdown-item" role="button" (click)="filterByRole('student')">Students</a>
-        </li>
-      </ul>
-    </div>
+ 
   </div>
 
   <table class="table table-hover align-middle mt-4 custom-table">
@@ -52,7 +39,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of filteredUsers">
+      <tr *ngFor="let user of searchResults">
         <td>
           <div class="d-flex align-items-center gap-2">
             <div class="avatar">

@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { categories } from '../../../core/models/categories';
 import { UserService } from '../../../core/services/user-service';
+import { resource } from '../../../core/models/Resource';
 @Component({
   selector: 'app-create-course',
   standalone: false,
@@ -63,6 +64,20 @@ export class CreateCourse {
   }
 
   trackByLecture(index: number, obj: any): any {
+    return index;
+  }
+  // //////////////////////
+  resources: resource[] = [{ title: '', description: '', link: ''}];
+
+  addResource() {
+    this.resources.push({ title: '', description: '', link: ''});
+  }
+
+  removeResource(index: number) {
+    this.resources.splice(index, 1);
+  }
+
+  trackByResource(index: number, obj: any): any {
     return index;
   }
 
@@ -152,9 +167,7 @@ export class CreateCourse {
       imageUrl: ['placeholder.png'],
       learningObjectives: { value: this.learningObjectives },
       Material: { value: this.lectures },
-      assignments: this._formBuilder.array([]),
-    });
-
+      Resources: { value: this.resources },    });
     this.getAuthors();
 
     // 2. Check logic and fill in the data

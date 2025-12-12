@@ -24,11 +24,18 @@
 
                 <ul class="nav nav-tabs custom-tabs mb-4">
                     <li class="nav-item">
-                        <span class="nav-link cursor-pointer" 
+                        <a class="nav-link" 
                             [ngClass]="{'active': activebutton}" 
                             (click)="setactivebuttom(true)" 
                             [routerLink]="['./']"> Content
-                        </span>
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " 
+                            [ngClass]="{'active': activebutton2}" 
+                            (click)="setactivebutton2(true)" 
+                            [routerLink]="['./']"> Resources
+                    </a>
                     </li>
 
                     <li class="nav-item">
@@ -50,6 +57,18 @@
                                     <a class="text-decoration-none text-black" [href]="lecture.link" target="_blank">{{lecture.title}}</a>
                                 </div>
                                 <div class="text-muted small">{{convertToHours(lecture.duration)}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card" [ngClass]="{'d-none': !activebutton2}">
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let resource of course.Resources?.value" class="list-group-item"> <i class="fa-solid fa-book-atlas text-success status-icon"></i>
+                            <div class="flex-grow-1">
+                                <div class="fw-medium">
+                                    <a class="text-decoration-none text-black" [href]="resource.link" target="_blank">{{resource.title}}</a>
+                                </div>
+                                <div class="text-muted small">{{resource.description}}</div>
                             </div>
                         </li>
                     </ul>

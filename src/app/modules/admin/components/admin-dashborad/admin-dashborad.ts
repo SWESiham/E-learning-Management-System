@@ -13,6 +13,10 @@ export class AdminDashborad implements OnInit {
   showUpdateModal: boolean = false;
   selectedRole: string = '';
   filteredUsers: any[] = [];
+  searchResults: any[] = [];
+  instractCount: number = 0;
+  studentCount: number = 0;
+  searchTerm: string = '';
   constructor(private _api: UserService) {}
   ngOnInit(): void {
     this.loadData();
@@ -26,6 +30,9 @@ export class AdminDashborad implements OnInit {
     this._api.getAllUsers().subscribe((res) => {
       this.users = res as any[];
       this.filteredUsers = [...this.users];
+      this.searchResults =this.filteredUsers;
+      this.instractCount = this.users.filter((u) => u.role === 'Instructor').length;
+      this.studentCount = this.users.filter((u) => u.role === 'Student').length;
     });
   }
 
@@ -62,13 +69,7 @@ export class AdminDashborad implements OnInit {
     }
   }
 
-  filterByRole(role: string) {
-    if (role === '' || !role) {
-      this.filteredUsers = this.users;
-    } else {
-      this.filteredUsers = this.users.filter((user) => user.role === role);
-    }
-  }
+ 
   toggleStatus(user: any) {
     const newStatus = !user.isActive;
 
@@ -82,5 +83,16 @@ export class AdminDashborad implements OnInit {
         alert('Failed to update status');
       }
     );
+  }
+  Search() {
+    console.log("filteredUsers", this.filteredUsers);
+    if(this.searchTerm === '') {
+      this.searchResults = this.filteredUsers;
+    }
+    else{
+    this.searchResults = this.filteredUsers.filter((user) =>
+      user.username?.toLowerCase().includes(this.searchTerm.toLowerCase()|| user.fullname?.toLowerCase().includes(this.searchTerm.toLowerCase()))
+    );
+  }
   }
 }

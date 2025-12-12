@@ -13,6 +13,7 @@ export class InstructorCourseDetails implements OnInit {
   course: any = {};
   role: string = "normal";
   activebutton: boolean = true; 
+  activebutton2: boolean = false; 
   payload: any;
 
   constructor(
@@ -50,6 +51,11 @@ export class InstructorCourseDetails implements OnInit {
 
   setactivebuttom(value: boolean) {
     this.activebutton = value;
+    this.activebutton2 = false;
+  }
+  setactivebutton2(value: boolean) {
+    this.activebutton2 = value;
+    this.activebutton = false;
   }
 
   convertToHours(minutes: number): string {

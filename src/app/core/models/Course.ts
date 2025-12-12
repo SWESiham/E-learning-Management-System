@@ -1,5 +1,6 @@
 import { assignment } from "./assignment";
 import { Lecture } from "./Material";
+import { resource } from "./Resource";
 export interface Course{
   id:string,
   title:string,
@@ -10,6 +11,7 @@ export interface Course{
   hours:number,
   category:string,
   Material:Lecture[],
+  Resources:resource[],
     imageUrl:string,
     learningObjectives: string[],
 

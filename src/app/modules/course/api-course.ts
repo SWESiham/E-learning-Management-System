@@ -40,4 +40,11 @@ export class ApiCourse {
     return this.http.get(`http://localhost:3000/enrollments?courseId=${courseId}`);
   }
 
+  ArchiveCourse(id: string) {
+    return this.http.patch(`${this.apiURL}/${id}`, { isArchived: true });
+  }
+  UnarchiveCourse(id: string) {
+    return this.http.patch(`${this.apiURL}/${id}`, { isArchived: false });
+  }
+
 }

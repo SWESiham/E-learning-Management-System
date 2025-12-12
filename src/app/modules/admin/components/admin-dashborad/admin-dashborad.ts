@@ -91,7 +91,7 @@ export class AdminDashborad implements OnInit {
     }
     else{
     this.searchResults = this.filteredUsers.filter((user) =>
-      user.username?.toLowerCase().includes(this.searchTerm.toLowerCase()|| user.fullname?.toLowerCase().includes(this.searchTerm.toLowerCase()))
+       user.fullname?.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
   }

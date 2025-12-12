@@ -31,336 +31,31 @@
       "password": "12345678",
       "role": "Instructor",
       "isActive": true
+    },
+    {
+      "id": "7332",
+      "fullname": "Ali Ali",
+      "email": "Ali@12.com",
+      "password": "12345678",
+      "role": "Instructor",
+      "isActive": true
     }
   ],
   "courses": [
     {
-      "id": "e386",
-      "title": "Python for Machine Learning23",
-      "isArchived": false,
-      "description": "Learn Python from scratch and master the libraries used in Machine Learning like NumPy and Pandas.",
-      "authorName": {
-        "value": "Dr. Ahmed Khaled"
-      },
-      "authorId": {
-        "value": "2"
-      },
-      "price": 50,
-      "hours": 15,
-      "category": "Machine Learning",
-      "imageUrl": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/python/logo.png",
-      "learningObjectives": {
-        "value": [
-          "Understand Python Syntax",
-          "Master NumPy Arrays"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "Introduction to Python",
-            "duration": 10,
-            "link": "https://www.youtube.com/embed/_uQrJ0TkZlc",
-            "status": true
-          },
-          {
-            "title": "Setup Environment",
-            "duration": 153,
-            "link": "https://www.youtube.com/embed/t8pPdKYpowI",
-            "status": true
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
-      "id": "9861",
-      "title": "Data Science with Pandas",
-      "isArchived": false,
-      "description": "Deep dive into data analysis and visualization using Python and Pandas.",
-      "authorName": {
-        "value": "Dr. Ahmed Khaled"
-      },
-      "authorId": {
-        "value": "2"
-      },
-      "price": 60,
-      "hours": 18,
-      "category": "Data Science",
-      "imageUrl": "https://placehold.co/600x400/png?text=Data+Science",
-      "learningObjectives": {
-        "value": [
-          "Data Cleaning",
-          "Data Visualization",
-          "Statistical Analysis"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "Pandas Introduction",
-            "duration": 20,
-            "link": "https://www.youtube.com/embed/vmEHCJofslg",
-            "status": false
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
-      "id": "16ed",
-      "title": "Backend with Node.js",
-      "isArchived": true,
-      "description": "Learn how to build scalable backend APIs using Node.js and Express.",
-      "authorName": {
-        "value": "Dr. Ahmed Khaled"
-      },
-      "authorId": {
-        "value": "2"
-      },
-      "price": 45,
-      "hours": 22,
-      "category": "Web Development",
-      "imageUrl": "https://placehold.co/600x400/png?text=Node.js",
-      "learningObjectives": {
-        "value": [
-          "RESTful APIs",
-          "Express Framework",
-          "Database Connection"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "Node.js Tutorial",
-            "duration": 30,
-            "link": "https://www.youtube.com/embed/fBNz5xF-Kx4",
-            "status": false
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
-      "id": "ddd4",
-      "title": "play",
-      "isArchived": true,
-      "description": "play",
-      "authorId": "2",
-      "price": 10,
-      "hours": 1,
-      "category": "Machine Learning",
-      "imageUrl": "placeholder.png",
-      "learningObjectives": {
-        "value": [
-          "p1",
-          "p2"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "intro",
-            "duration": 10,
-            "link": "http",
-            "status": false
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
-      "id": "336d",
-      "title": "play",
-      "isArchived": false,
-      "description": "play",
-      "authorName": "Dr. Ahmed Khaled",
-      "authorId": "2",
-      "price": 1,
-      "hours": 1,
-      "category": "Web Development",
-      "imageUrl": "placeholder.png",
-      "learningObjectives": {
-        "value": [
-          "pla",
-          ""
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "intro",
-            "duration": 10,
-            "link": "http",
-            "status": false
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
-      "id": "e274",
-      "title": "testing33",
-      "description": "test testte s",
-      "authorName": "Dr. Ahmed Khaled",
-      "authorId": {
-        "value": "2"
-      },
-      "price": 19,
-      "hours": 10,
-      "category": "Data Science",
-      "imageUrl": "placeholder.png",
-      "learningObjectives": {
-        "value": [
-          "pl",
-          "pl2"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "intro",
-            "duration": 1,
-            "link": "http:",
-            "status": false
-          }
-        ]
-      },
-      "assignments": [],
-      "isArchived": true
-    },
-    {
-      "id": "f26c",
-      "title": "pxy",
-      "description": "pzy",
-      "authorId": "2",
-      "price": 10,
-      "hours": 10,
-      "category": "Other",
-      "imageUrl": "placeholder.png",
-      "learningObjectives": {
-        "value": [
-          "pla",
-          "pp"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "intro",
-            "duration": 10,
-            "link": "http:",
-            "status": false
-          }
-        ]
-      },
-      "assignments": [],
-      "isArchived": true
-    },
-    {
-      "id": "8147",
-      "title": "playyy",
-      "description": "playyyplayyyplayyyplayyyplayyyplayyy",
-      "authorId": {
-        "value": "2"
-      },
-      "price": 10,
-      "hours": 10,
-      "category": "Other",
-      "imageUrl": "placeholder.png",
-      "learningObjectives": {
-        "value": [
-          "lpppp"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "intro",
-            "duration": 10,
-            "link": "http",
-            "status": false
-          }
-        ]
-      },
-      "assignments": [],
-      "isArchived": false
-    },
-    {
-      "id": "5a57",
-      "title": "test44",
-      "description": "test44test44test44test44test44",
-      "authorId": "3",
-      "price": 100,
-      "hours": 10,
-      "category": "Other",
-      "imageUrl": "placeholder.png",
-      "learningObjectives": {
-        "value": [
-          "testq",
-          "testr"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "intro",
-            "duration": 10,
-            "link": "htttp",
-            "status": false
-          },
-          {
-            "title": "intro2",
-            "duration": 10,
-            "link": "http",
-            "status": false
-          }
-        ]
-      },
-      "assignments": [],
-      "isArchived": true
-    },
-    {
-      "id": "6d35",
-      "title": "Express",
-      "description": "Express ExpressExpress",
-      "authorName": "Toka",
-      "authorId": "d81c",
-      "price": 0,
-      "hours": 10,
-      "category": "Web Development",
-      "imageUrl": "placeholder.png",
-      "learningObjectives": {
-        "value": [
-          "Easy frameWork"
-        ]
-      },
-      "Material": {
-        "value": [
-          {
-            "title": "intro",
-            "duration": 10,
-            "link": "http",
-            "status": true
-          }
-        ]
-      },
-      "assignments": []
-    },
-    {
-      "id": "d74d",
-      "title": "testing",
-      "description": "test test test test test test test test test test test test",
+      "id": "0e70",
+      "title": "Python",
+      "description": "Python is\na high-level, general-purpose programming language known for its clear, readable syntax that emphasizes simplicity and ease of use. Created by Guido van Rossum in 1991, it is used across a wide variety of domains, from web development to artificial intelligence. ",
       "authorName": "AhmedKhaled",
       "authorId": "1bc7",
-      "price": 100,
-      "hours": 10,
-      "category": "Other",
-      "imageUrl": "placeholder.png",
+      "price": 0,
+      "hours": 24,
+      "category": "Machine Learning",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
       "learningObjectives": {
         "value": [
-          "p1",
-          "p2"
+          "clean data",
+          "start point in build Models"
         ]
       },
       "Material": {
@@ -368,7 +63,13 @@
           {
             "title": "intro",
             "duration": 10,
-            "link": "http",
+            "link": "https://youtu.be/fWjsdhR3z3c?si=xA3i4I9oHctM07N_",
+            "status": false
+          },
+          {
+            "title": "handle data",
+            "duration": 2,
+            "link": "https://youtu.be/QoIRX37VZpo?si=tGMNqHD1CPXPKlD_",
             "status": false
           }
         ]
@@ -377,11 +78,112 @@
         "value": [
           {
             "title": "intro",
-            "description": "intro about course",
-            "link": "http"
+            "description": "waht is python",
+            "link": "https://drive.google.com/file/d/1VlGz5VMBSDkQUa8JR5-80vrKzNLpkjxn/view?usp=drive_link"
+          },
+          {
+            "title": "handle data",
+            "description": "handle data and clean ",
+            "link": "https://drive.google.com/file/d/1VlGz5VMBSDkQUa8JR5-80vrKzNLpkjxn/view?usp=drive_link"
+          }
+        ]
+      },
+      "assignments": []
+    },
+    {
+      "id": "6e78",
+      "title": "Nod Js",
+      "description": "is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside of a web browser. Built on Google's high-performance V8 JavaScript engine, it enables server-side development, allowing the use of a single programming language for both front-end and back-end applications",
+      "authorName": "AhmedKhaled",
+      "authorId": "1bc7",
+      "price": 0,
+      "hours": 20,
+      "category": "Web Development",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/1182px-Node.js_logo_2015.svg.png?20150315010906",
+      "learningObjectives": {
+        "value": [
+          "create Server",
+          "Handle requests"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 16,
+            "link": "https://youtu.be/ENrzD9HAZK4?si=4VIUHkDTCbvFRwP0",
+            "status": false
+          },
+          {
+            "title": "handle requests",
+            "duration": 20,
+            "link": "https://youtu.be/ENrzD9HAZK4?si=4VIUHkDTCbvFRwP0",
+            "status": false
+          }
+        ]
+      },
+      "Resources": {
+        "value": [
+          {
+            "title": "intro",
+            "description": "iwhat is Node",
+            "link": "https://drive.google.com/file/d/14_no3-fZr7WuHSZBvD1hBWzepC3ewxmq/view?usp=drive_link"
+          },
+          {
+            "title": "handle API",
+            "description": "handle API , request Methods",
+            "link": "https://drive.google.com/file/d/14_no3-fZr7WuHSZBvD1hBWzepC3ewxmq/view?usp=drive_link"
           }
         ]
       }
+    },
+    {
+      "id": "ac00",
+      "title": "HCI",
+      "description": "HCI descripe communications between user and computer",
+      "authorName": "Ali Ali",
+      "authorId": "7332",
+      "price": 0,
+      "hours": 25,
+      "category": "UI/UX Design",
+      "imageUrl": "https://thumbs.dreamstime.com/b/futuristic-technology-interaction-human-hand-robotic-arm-over-computer-screen-data-visualization-analytics-404054975.jpg?w=768",
+      "learningObjectives": {
+        "value": [
+          "know users and target users",
+          "building intrface cycle"
+        ]
+      },
+      "Material": {
+        "value": [
+          {
+            "title": "intro",
+            "duration": 6,
+            "link": "https://youtu.be/yNzLBI0wsGU?si=pk8R1YuTr0R4M0yE",
+            "status": false
+          },
+          {
+            "title": "Errors types",
+            "duration": 20,
+            "link": "https://youtu.be/yNzLBI0wsGU?si=pk8R1YuTr0R4M0yE",
+            "status": false
+          }
+        ]
+      },
+      "Resources": {
+        "value": [
+          {
+            "title": "intro",
+            "description": "what is HCI",
+            "link": "https://drive.google.com/file/d/1qyT__ZGEmn5W4hJo7jxHY8PtecYvBeRP/view?usp=drive_link"
+          },
+          {
+            "title": "Errors types",
+            "description": "Error types and prevnetion",
+            "link": "https://drive.google.com/file/d/1qyT__ZGEmn5W4hJo7jxHY8PtecYvBeRP/view?usp=drive_link"
+          }
+        ]
+      },
+      "assignments": []
     }
   ],
   "enrollments": [
@@ -524,6 +326,24 @@
       "title": "test Api",
       "description": "test All apis",
       "assignmentLink": "https://drive.google.com/drive/folders/1CdZDa3z97RN_yRjFlC7IAcLfmw6D1yLy",
+      "dueDate": "2025-12-24",
+      "points": 100
+    },
+    {
+      "id": "ql2pa2zsnkusj5wug1j",
+      "courseId": "0e70",
+      "title": "read data from files",
+      "description": "read data from files  and show it",
+      "assignmentLink": "https://drive.google.com/file/d/1VlGz5VMBSDkQUa8JR5-80vrKzNLpkjxn/view?usp=drive_link",
+      "dueDate": "2025-12-26",
+      "points": 100
+    },
+    {
+      "id": "lfgk9e5m8vrxlqtha10ra",
+      "courseId": "6e78",
+      "title": "CRUD operations",
+      "description": "make CRUD operations to courses",
+      "assignmentLink": "https://drive.google.com/file/d/14_no3-fZr7WuHSZBvD1hBWzepC3ewxmq/view?usp=drive_link",
       "dueDate": "2025-12-24",
       "points": 100
     }

@@ -5,6 +5,7 @@ import { Lecture } from '../../../core/models/Material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Auth } from '../../../core/services/auth';
 import { ToastrService } from 'ngx-toastr';
+import { resource } from '../../../core/models/Resource';
 
 @Component({
   selector: 'app-edit-course',
@@ -75,12 +76,26 @@ export class EditCourse {
     }
   
     removeLecture(index: number) {
-      this.lectures.splice(index, 1);
+      console.log("index",index);
+      this.lectures=this.lectures.splice(index, 1);
     }
   
     trackByLecture(index: number, obj: any): any {
       return index;
     }
+    resources: resource[] = [{ title: '', description: '', link: ''}];
+    
+      addResource() {
+        this.resources.push({ title: '', description: '', link: ''});
+      }
+    
+      removeResource(index: number) {
+        this.resources.splice(index, 1);
+      }
+    
+      trackByResource(index: number, obj: any): any {
+        return index;
+      }
    checkNotEmpty(): boolean {
     let flag=true
   this.lectures.forEach((lecture: any) => {
@@ -155,6 +170,7 @@ export class EditCourse {
       this.loading=false
        this.learningObjectives= [...this.course.learningObjectives.value]
       this.lectures= [...this.course.Material.value]
+      this.resources= [...this.course.Resources.value]
         this.courseForm = this._formBuilder.group({
           title: [this.course.title, Validators.required],
           description: [this.course.description, Validators.required],
@@ -167,6 +183,7 @@ export class EditCourse {
           imageUrl:this.course.imageUrl || ['placeholder.png'],
           learningObjectives:  [{ value: this.learningObjectives }],
            Material: [{ value: this.lectures }],
+           Resources: [{ value: this.resources }],
           assignments: this._formBuilder.array([])
         });
    

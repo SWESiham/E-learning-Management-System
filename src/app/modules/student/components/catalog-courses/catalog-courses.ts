@@ -23,19 +23,19 @@ export class CatalogCourses {
       this.courses = res;
       this.courses = this.filterArchived(res);
       console.log("this.courses", this.courses);
-    // const user = this._auth.getUserPayload();
-    //   if (user && user.id) {
-    //     this._apiCourse.getEnrollmentsByUserId(user.id).subscribe((enrollments: any) => {
+    const user = this._auth.getUserPayload();
+      if (user && user.id) {
+        this._apiCourse.getEnrollmentsByUserId(user.id).subscribe((enrollments: any) => {
           
-    //       this.courses.forEach(course => {
+          this.courses.forEach(course => {
       
-    //         const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
+            const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
            
-    //         course.isEnrolled = isEnrolled; 
-    //       });
+            course.isEnrolled = isEnrolled; 
+          });
 
-    //     });
-    //   }
+        });
+      }
     
     })
   }

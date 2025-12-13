@@ -20,14 +20,13 @@ export class AdminEnrollement implements OnInit {
   students: any[] = [];
   totalInstructors: number = 0;
   showModal = false;
-  selectedStudentId: any;
-  selectedCourseId: any;
+  selectedStudentId: any = null;
+  selectedCourseId: any = null;
   enrollmentDate: string = '';
   totalEnrollments: number = 0;
   studentCount: number = 0;
   searchTerm: string = '';
 
-  // students = this.users.filter((u) => u.role.toLowerCase() === 'student');
   constructor(
     private _courseApi: ApiCourse,
     private _userApi: UserService,
@@ -36,10 +35,23 @@ export class AdminEnrollement implements OnInit {
 
   openModal() {
     this.showModal = true;
+    this.selectedStudentId = null;
+    this.selectedCourseId = null;
+    this.enrollmentDate = '';
   }
 
   closeModal() {
     this.showModal = false;
+  }
+
+  getAvailableCourses() {
+    if (!this.selectedStudentId) {
+      return this.courses;
+    }
+    const studentEnrollments = this.enrollments.filter(e => e.studentId == this.selectedStudentId);
+    const enrolledCourseIds = studentEnrollments.map(e => e.courseId);
+
+    return this.courses.filter(course => !enrolledCourseIds.includes(course.id));
   }
 
   enrollStudent() {
@@ -49,20 +61,17 @@ export class AdminEnrollement implements OnInit {
       studentId: this.selectedStudentId,
       courseId: this.selectedCourseId,
       progress: 0,
-      enrollmentDate: this.enrollmentDate
+      enrollmentDate: this.enrollmentDate,
+      isEnrolled: true
     };
 
     this.http.post('http://localhost:3000/enrollments', body).subscribe({
       next: () => {
         alert('Student enrolled successfully!');
         this.loadData();
-        this.selectedStudentId = null;
-        this.selectedCourseId = null;
-        this.enrollmentDate = '';
         this.closeModal();
       },
       error: (err) => {
-        console.error('Enrollment failed:', err);
         alert('Error enrolling student');
       }
     });
@@ -74,10 +83,12 @@ export class AdminEnrollement implements OnInit {
 
   loadData() {
     this._courseApi.getCourses().subscribe((courses: any) => {
-      this.courses = courses;
+      this.courses = courses.filter((c: any) => c.isArchived === false);
+      
       this._userApi.getAllUsers().subscribe((users: any) => {
         this.users = users;
         this.students = users.filter((u: any) => u.role.toLowerCase() === 'student');
+        
         this.http.get<any[]>('http://localhost:3000/enrollments').subscribe((enrollments) => {
           this.enrollments = enrollments;
           this.totalEnrollments = enrollments.length;
@@ -86,8 +97,6 @@ export class AdminEnrollement implements OnInit {
             const count = this.enrollments.filter(e => e.courseId == course.id).length;
             course.enrolledstudents = count;
           });
-          
-          
 
           this.mapCoursesToStudents();
         });
@@ -97,15 +106,15 @@ export class AdminEnrollement implements OnInit {
 
   mapCoursesToStudents() {
     this.studentsWithCourses = [];
+    this.totalInstructors = this.users.filter((u) => u.role.toLowerCase() === 'instructor').length;
 
     this.enrollments.forEach((en) => {
       const student = this.students.find((s) => s.id == en.studentId);
       const course = this.courses.find((c) => c.id == en.courseId);
-      const instructor = this.users.find((u) => u.id == course.authorId);
-       this.totalInstructors = this.users.filter((u) => u.role.toLowerCase() === 'instructor').length;
-      // console.log(course);
 
       if (student && course) {
+        const instructor = this.users.find((u) => u.id == course.authorId);
+        
         this.studentsWithCourses.push({
           studentName: student.fullname || student.username,
           courseName: course.title,
@@ -113,20 +122,20 @@ export class AdminEnrollement implements OnInit {
           enrollmentDate: en.enrollmentDate,
           progress: en.progress,
         });
+        course.instructorName = instructor?.fullname || 'Unknown Instructor';
       }
-      course.instructorName = instructor?.fullname || 'Unknown Instructor';
-      // console.log(this.studentsWithCourses);
-       this.filteredUsers = this.studentsWithCourses;
     });
+    this.filteredUsers = this.studentsWithCourses;
   }
+
   search() {
-    if(this.searchTerm === '') {
+    if (this.searchTerm === '') {
       this.filteredUsers = this.studentsWithCourses;
+    } else {
+      this.filteredUsers = this.studentsWithCourses.filter((student) =>
+        student.studentName.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
     }
-    this.filteredUsers = this.studentsWithCourses.filter((student) =>
-      student.studentName.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
-    
   }
 
   getInitials(name: string): string {
@@ -138,6 +147,4 @@ export class AdminEnrollement implements OnInit {
       return (words[0][0] + words[1][0]).toUpperCase();
     }
   }
-
-
 }

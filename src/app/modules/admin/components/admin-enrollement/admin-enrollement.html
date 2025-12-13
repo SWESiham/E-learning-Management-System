@@ -1,7 +1,5 @@
 <div class="container">
-  <div
-    style="display: flex; flex-direction: row; justify-content: space-between; align-items: center"
-  >
+  <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
     <span>
       <h3>Enrollment Management</h3>
       <p>Manage student course enrollments</p>
@@ -19,7 +17,7 @@
 
       <label>Select Student</label>
       <select [(ngModel)]="selectedStudentId">
-        <option value="" disabled selected>Choose a student..</option>
+        <option [ngValue]="null" disabled selected>Choose a student..</option>
         <option *ngFor="let student of students" [value]="student.id">
           {{ student.fullname ?? student.username }}
         </option>
@@ -27,8 +25,8 @@
 
       <label>Select Course</label>
       <select [(ngModel)]="selectedCourseId">
-        <option value="" disabled selected>Choose a course..</option>
-        <option *ngFor="let course of courses" [value]="course.id">
+        <option [ngValue]="null" disabled selected>Choose a course..</option>
+        <option *ngFor="let course of getAvailableCourses()" [value]="course.id">
           {{ course.title }}
         </option>
       </select>
@@ -39,7 +37,7 @@
       <div class="modal-actions">
         <button class="btn-enroll" (click)="enrollStudent()">
           Enroll Student
-         <img src="assets/images/enroll.svg" alt="enroll" />
+          <img src="assets/images/enroll.svg" alt="enroll" />
         </button>
         <button class="btn-cancel" (click)="closeModal()">Cancel</button>
       </div>
@@ -47,15 +45,11 @@
   </div>
 
   <div style="display: flex; flex-direction: row; gap: 5%">
-    <app-activity-card 
-    title="Total Enrollments"
-    [number]="totalEnrollments" 
-    ></app-activity-card>
+    <app-activity-card title="Total Enrollments" [number]="totalEnrollments"></app-activity-card>
     <app-activity-card title="Total Instructors" [number]="totalInstructors"></app-activity-card>
   </div>
 
-  <div
-    style="
+  <div style="
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       width: 100%;
       padding: 20px;
@@ -64,22 +58,15 @@
       display: flex;
       flex-direction: row;
       gap: 1%;
-    "
-  >
+    ">
     <div class="input-group">
       <span class="input-group-text bg-white border-end-0">
         <img src="assets/images/search.svg" alt="search" (click)="search()" />
       </span>
 
-      <input
-        class="form-control border-start-0"
-        type="search"
-        [(ngModel)]="searchTerm"
-        placeholder="Search by student or course"
-        aria-label="Search"
-      />
+      <input class="form-control border-start-0" type="search" [(ngModel)]="searchTerm"
+        placeholder="Search by student or course" aria-label="Search" />
     </div>
-    
   </div>
 
   <table class="table table-hover align-middle mt-4 custom-table">
@@ -95,7 +82,7 @@
       <tr *ngFor="let enroll of filteredUsers">
         <td>
           <div class="d-flex align-items-center gap-2">
-           <div class="avatar">
+            <div class="avatar">
               {{ getInitials(enroll.studentName) }}
             </div>
             <div>
@@ -123,11 +110,8 @@
   <h4>Course Overview</h4>
 
   <div class="cards-grid">
-      <app-overview-card
-      *ngFor="let course of courses"
-      [courseName]="course.title"
-      [instructorName]="course.instructorName"
-      [enrolledstudents]="course.enrolledstudents">
-    ></app-overview-card>
+    <app-overview-card *ngFor="let course of courses" [courseName]="course.title"
+      [instructorName]="course.instructorName" [enrolledstudents]="course.enrolledstudents">
+    </app-overview-card>
   </div>
 </div>

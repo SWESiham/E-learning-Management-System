@@ -139,7 +139,7 @@
           }
         ]
       },
-      "isArchived": true
+      "isArchived": false
     },
     {
       "id": "ac00",
@@ -188,7 +188,8 @@
           }
         ]
       },
-      "assignments": []
+      "assignments": [],
+      "isArchived": false
     },
     {
       "id": "f567",
@@ -230,37 +231,32 @@
   ],
   "enrollments": [
     {
-      "id": "00c0",
-      "studentId": "ba9f",
+      "id": "8f91",
+      "studentId": "b435",
       "courseId": "0e70",
-      "progress": 30,
-      "enrollmentDate": "2021-11-10"
-    },
-    {
-      "id": "60e8",
-      "studentId": "ba9f",
-      "courseId": "ac00",
-      "progress": 0,
-      "enrollmentDate": "2025-12-12"
-    },
-    {
-      "id": "4dfd",
-      "studentId": "ba9f",
-      "courseId": "6e78",
       "progress": 0,
       "enrollmentDate": "2025-12-13"
     },
     {
-      "id": "ea4c",
+      "id": "9d66",
       "studentId": "b435",
       "courseId": "f567",
       "progress": 0,
-      "enrollmentDate": "2025-12-13"
+      "enrollmentDate": "2025-12-12",
+      "isEnrolled": true
     },
     {
-      "id": "45bd",
-      "studentId": "ba9f",
-      "courseId": "0e70",
+      "id": "7c05",
+      "studentId": "b435",
+      "courseId": "6e78",
+      "progress": 0,
+      "enrollmentDate": "2025-12-15",
+      "isEnrolled": true
+    },
+    {
+      "id": "3db1",
+      "studentId": "b435",
+      "courseId": "ac00",
       "progress": 0,
       "enrollmentDate": "2025-12-13"
     }

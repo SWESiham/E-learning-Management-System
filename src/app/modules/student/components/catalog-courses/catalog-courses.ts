@@ -98,7 +98,7 @@ export class CatalogCourses {
           
           courses.forEach(course => {
       
-            const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
+            const isEnrolled = enrollments.some((e: any) => e.courseId === course.id && e.studentId === user.id);
            
             course.isEnrolled = isEnrolled; 
           });

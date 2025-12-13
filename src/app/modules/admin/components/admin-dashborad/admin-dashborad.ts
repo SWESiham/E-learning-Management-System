@@ -31,7 +31,7 @@ export class AdminDashborad implements OnInit {
     this._api.getAllUsers().subscribe((res) => {
       this.users = res as any[];
       this.filteredUsers = [...this.users];
-      this.searchResults =this.filteredUsers;
+      this.searchResults =this.filteredUsers.filter(user => user.role !== 'admin');
       this.instractCount = this.users.filter((u) => u.role === 'Instructor').length;
       this.studentCount = this.users.filter((u) => u.role === 'Student').length;
     });

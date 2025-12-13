@@ -26,7 +26,7 @@ export class Auth {
   }
 
   getToken() {
-    console.log("token", localStorage.getItem('token'));
+    // console.log("token", localStorage.getItem('token'));
     return localStorage.getItem('token');
   }
 

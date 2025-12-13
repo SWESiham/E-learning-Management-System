@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { Profile } from './shared/components/profile/profile';
 import { InstructorModule } from './modules/instructor/instructor-module';
+import { adminGuard } from './core/guards/admin-guard';
 
 const routes: Routes = [
 
@@ -36,6 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    canActivate:[adminGuard],
     loadChildren: () => import('./modules/admin/admin-module').then(m => m.AdminModule)
   },
 

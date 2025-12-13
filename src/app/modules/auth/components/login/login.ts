@@ -28,15 +28,15 @@ export class Login {
         if (res.length === 0) {
           return;
         }
-        
+
         const user = res[0];
-        if(user.isActive === false) {
+        if (user.isActive === false) {
           console.log("Your account is disabled!");
           alert("Your account is disabled!");
           return;
         }
         else {
-          this.isActive=true;
+          this.isActive = true;
         }
         if (user.password === password) {
           console.log("Login Success", user);
@@ -44,12 +44,12 @@ export class Login {
           this._auth.saveToken(user);
 
           console.log(user.role);
-          
-          if(user.role.toLowerCase() === 'instructor'&& user.isActive ) {
+
+          if (user.role.toLowerCase() === 'instructor' && user.isActive) {
             this._router.navigate(['/course/instructorCourses']);
-          } else if(user.role.toLowerCase() === 'student'&&user.isActive) {
+          } else if (user.role.toLowerCase() === 'student' && user.isActive) {
             this._router.navigate(['/student/my-courses']);
-          }else if(user.role.toLowerCase() === 'admin') {
+          } else if (user.role.toLowerCase() === 'admin') {
             this._router.navigate(['/admin']);
           }
         } else {
@@ -57,6 +57,8 @@ export class Login {
         }
       },
       error: (err) => {
+        alert("Invalid Credentials!");
+
         console.log(err);
       }
     });

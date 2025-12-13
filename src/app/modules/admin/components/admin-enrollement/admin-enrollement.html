@@ -47,8 +47,11 @@
   </div>
 
   <div style="display: flex; flex-direction: row; gap: 5%">
-    <app-activity-card title="Total enrollments"></app-activity-card>
-    <app-activity-card title="Total Instructors" [number]="4"></app-activity-card>
+    <app-activity-card 
+    title="Total Enrollments"
+    [number]="totalEnrollments" 
+    ></app-activity-card>
+    <app-activity-card title="Total Instructors" [number]="totalInstructors"></app-activity-card>
   </div>
 
   <div
@@ -128,10 +131,11 @@
   <h4>Course Overview</h4>
 
   <div class="cards-grid">
-    <app-overview-card
-      *ngFor="let item of studentsWithCourses"
-      [courseName]="item.courseName"
-      [instructorName]="item.instructorName"
+      <app-overview-card
+      *ngFor="let course of courses"
+      [courseName]="course.title"
+      [instructorName]="course.instructorName"
+      [enrolledstudents]="course.enrolledstudents">
     ></app-overview-card>
   </div>
 </div>

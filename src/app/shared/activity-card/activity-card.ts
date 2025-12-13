@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ActivityCard {
 
-  @Input()number:Number=7;
+  @Input()number:Number=0;
   @Input()title:string='Total Users'
 
 }

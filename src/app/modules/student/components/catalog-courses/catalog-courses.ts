@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Auth } from '../../../../core/services/auth';
 import { ApiCourse } from '../../../../core/services/api-course';
 import { categories } from '../../../../core/models/categories';
 
 @Component({
-  selector: 'app-catalog-courses-student',
+  selector: 'app-catalog-courses',
   standalone: false,
   templateUrl: './catalog-courses.html',
   styleUrl: './catalog-courses.css',
@@ -17,25 +17,23 @@ export class CatalogCourses {
   enrolled: boolean = false;
   constructor(private _auth: Auth, private _apiCourse: ApiCourse) { }
   courses: any[] = []
-  @Input()isAdmin: boolean = false;
   ngOnInit(): void {
     this._apiCourse.getCourses().subscribe((res: any) => {
       this.courses = res;
-      this.courses = this.courses.filter(c => !c.isArchived);
       console.log("this.courses", this.courses);
-    // const user = this._auth.getUserPayload();
-    //   if (user && user.id) {
-    //     this._apiCourse.getEnrollmentsByUserId(user.id).subscribe((enrollments: any) => {
+    const user = this._auth.getUserPayload();
+      if (user && user.id) {
+        this._apiCourse.getEnrollmentsByUserId(user.id).subscribe((enrollments: any) => {
           
-    //       this.courses.forEach(course => {
+          this.courses.forEach(course => {
       
-    //         const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
+            const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
            
-    //         course.isEnrolled = isEnrolled; 
-    //       });
+            course.isEnrolled = isEnrolled; 
+          });
 
-    //     });
-    //   }
+        });
+      }
     
     })
   }
@@ -49,7 +47,6 @@ export class CatalogCourses {
     else {
       this._apiCourse.getCoursesByCategory(category).subscribe((res: any) => {
         this.courses = res;
-        this.courses = this.courses.filter(c => !c.isArchived);
         console.log("this.courses", this.courses);
 
       })
@@ -83,11 +80,5 @@ export class CatalogCourses {
         console.error('Enrollment failed:', err);
       }
     });
-  }
-
-  deleteCourse(id:string){ 
-  this._apiCourse.deleteCourse(id).subscribe(() => {
-    this.courses = this.courses.filter(c => c.id !== id);
-  });
   }
 }

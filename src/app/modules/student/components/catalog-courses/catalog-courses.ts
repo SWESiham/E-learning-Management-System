@@ -25,16 +25,7 @@ export class CatalogCourses {
       console.log("this.courses", this.courses);
     const user = this._auth.getUserPayload();
       if (user && user.id) {
-        this._apiCourse.getEnrollmentsByUserId(user.id).subscribe((enrollments: any) => {
-          
-          this.courses.forEach(course => {
-      
-            const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
-           
-            course.isEnrolled = isEnrolled; 
-          });
-
-        });
+        this.courses = this.enrollFilter(this.courses);
       }
     
     })
@@ -49,6 +40,7 @@ export class CatalogCourses {
     else {
       this._apiCourse.getCoursesByCategory(category).subscribe((res: any) => {
         this.courses = this.filterArchived(res);
+        this.courses = this.enrollFilter(res);
         console.log("this.courses", this.courses);
       })
     }
@@ -96,6 +88,24 @@ export class CatalogCourses {
   filterArchived(courses: any[]) {
   if (this.isAdmin) return courses;
   return courses.filter(c => !c.isArchived);
-}
+  }
+  enrollFilter(courses: any[]) {
+    if (this.isAdmin) return courses;
+
+    const user = this._auth.getUserPayload();
+      if (user && user.id) {
+        this._apiCourse.getEnrollmentsByUserId(user.id).subscribe((enrollments: any) => {
+          
+          courses.forEach(course => {
+      
+            const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
+           
+            course.isEnrolled = isEnrolled; 
+          });
+
+        });
+      }
+      return courses;
+  }
 
 }

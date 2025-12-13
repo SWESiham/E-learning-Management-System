@@ -65,13 +65,13 @@
             "title": "intro",
             "duration": 10,
             "link": "https://youtu.be/fWjsdhR3z3c?si=xA3i4I9oHctM07N_",
-            "status": false
+            "status": true
           },
           {
             "title": "handle data",
             "duration": 2,
             "link": "https://youtu.be/QoIRX37VZpo?si=tGMNqHD1CPXPKlD_",
-            "status": false
+            "status": true
           }
         ]
       },
@@ -231,21 +231,6 @@
   ],
   "enrollments": [
     {
-      "id": "8f91",
-      "studentId": "b435",
-      "courseId": "0e70",
-      "progress": 0,
-      "enrollmentDate": "2025-12-13"
-    },
-    {
-      "id": "9d66",
-      "studentId": "b435",
-      "courseId": "f567",
-      "progress": 0,
-      "enrollmentDate": "2025-12-12",
-      "isEnrolled": true
-    },
-    {
       "id": "7c05",
       "studentId": "b435",
       "courseId": "6e78",
@@ -257,6 +242,13 @@
       "id": "3db1",
       "studentId": "b435",
       "courseId": "ac00",
+      "progress": 0,
+      "enrollmentDate": "2025-12-13"
+    },
+    {
+      "id": "87d3",
+      "studentId": "b435",
+      "courseId": "0e70",
       "progress": 0,
       "enrollmentDate": "2025-12-13"
     }
@@ -297,6 +289,18 @@
       "status": "graded",
       "grade": 100,
       "feedback": "Perfect"
+    },
+    {
+      "id": "410c",
+      "courseId": "0e70",
+      "assignmentId": "ql2pa2zsnkusj5wug1j",
+      "studentId": "b435",
+      "studentName": "Salma",
+      "submissionDate": "2025-12-13",
+      "answer": "https://github.com",
+      "status": "graded",
+      "grade": 100,
+      "feedback": "Great work"
     }
   ],
   "assignments": [

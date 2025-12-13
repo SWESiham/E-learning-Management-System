@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Auth } from '../../../core/services/auth';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +9,7 @@ import { Auth } from '../../../core/services/auth';
   styleUrl: './profile.css',
 })
 export class Profile implements OnInit {
-  constructor(private _auth: Auth) { };
+  constructor(private _auth: Auth,private route: ActivatedRoute) { };
   user!: any;
   userId!: string;
   ngOnInit(): void {
@@ -16,6 +17,11 @@ export class Profile implements OnInit {
   }
   userData() {
     this.userId = this._auth.getUserPayload().id;
+    const targetId = this.route.snapshot.paramMap.get('id')!;
+
+    if (targetId) {
+      this.userId = targetId;
+    }
     //  = this.user.id;
     // console.log("userrrr::: ", this.user);
     this._auth.getUserById(this.userId).subscribe({

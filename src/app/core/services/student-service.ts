@@ -13,7 +13,9 @@ export class StudentService {
   getStudents(){
     return this._http.get(`${this.apiURL}/users?role=Student`);
   }
-
+   getStudentById(studentId: string) {
+    return this._http.get(`${this.apiURL}/users/${studentId}`);
+  }
   getStudeEnrollments(studentId: string) {
     return this._http.get(`${this.apiURL}/enrollments?studentId=${studentId}`);
   }

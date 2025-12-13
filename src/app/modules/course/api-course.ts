@@ -37,6 +37,7 @@ export class ApiCourse {
     return this.http.get(`${this.apiURL}?category=${category}`);
   }
   getEnrollmentsByCourseId(courseId: string) {
+    
     return this.http.get(`http://localhost:3000/enrollments?courseId=${courseId}`);
   }
 

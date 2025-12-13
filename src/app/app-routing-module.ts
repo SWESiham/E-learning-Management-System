@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/student/student-module').then(m => m.StudentModule)
   },
   {
+    path: 'profile/:id',
+    component: Profile
+  },
+  {
     path: 'profile',
     component: Profile
   },

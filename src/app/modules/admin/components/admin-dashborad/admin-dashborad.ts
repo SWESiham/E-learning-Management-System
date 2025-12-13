@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../../../core/services/user-service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-dashborad',
   standalone: false,
@@ -17,7 +18,7 @@ export class AdminDashborad implements OnInit {
   instractCount: number = 0;
   studentCount: number = 0;
   searchTerm: string = '';
-  constructor(private _api: UserService) {}
+  constructor(private _api: UserService,private router: Router) {}
   ngOnInit(): void {
     this.loadData();
   }
@@ -42,10 +43,9 @@ export class AdminDashborad implements OnInit {
     });
   }
 
-  updateUser(userId: number, data: any) {
-    this.selectedUser = { ...data };
-    this.showUpdateModal = true;
-  }
+ updateUser(userId: any) {
+  this.router.navigate(['/profile/', userId]);
+}
 
   saveUser() {
     this._api.updateUser(this.selectedUser.id, this.selectedUser).subscribe(() => {

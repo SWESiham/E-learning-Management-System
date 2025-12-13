@@ -79,13 +79,11 @@
       <thead>
         <tr>
           <th>Student Name</th>
-          <th>Enrollment Date</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let enroll of enrollments; let i = index">
-          <td>{{ enroll.studentName }}</td>
-          <td>{{ enroll.enrollmentDate || '-' }}</td>
+        <tr *ngFor="let enroll of enrollmentStudents; let i = index">
+          <td>{{ enroll }}</td>
         </tr>
       </tbody>
     </table>

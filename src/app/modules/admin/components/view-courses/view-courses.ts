@@ -16,6 +16,7 @@ export class ViewCourses implements OnInit {
   enrollments: any;
   students: any;
   activeTab: string = 'content';
+  enrollmentStudents: any[] = [];
 
   constructor(
     private _api: ApiCourse,
@@ -38,6 +39,13 @@ export class ViewCourses implements OnInit {
     this._api.getEnrollmentsByCourseId(this.courseId).subscribe((data: any) => {
       this.enrollments = data;
       console.log('Enrollments for this course:', data);
+      this.enrollments.forEach((enrollment: any) => {
+        this.studentService
+          .getStudentById(enrollment.studentId)
+          .subscribe((student: any) => {
+           this.enrollmentStudents.push ( student.fullname);
+          });
+      });
     });
 
   this.studentService.getStudents().subscribe((students: any) => {

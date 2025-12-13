@@ -16,6 +16,7 @@ export class AdminEnrollement implements OnInit {
   enrollments: any[] = [];
   mergedData: any[] = [];
   studentsWithCourses: any[] = [];
+  filteredUsers: any[] = [];
   students: any[] = [];
   totalInstructors: number = 0;
   showModal = false;
@@ -24,6 +25,7 @@ export class AdminEnrollement implements OnInit {
   enrollmentDate: string = '';
   totalEnrollments: number = 0;
   studentCount: number = 0;
+  searchTerm: string = '';
 
   // students = this.users.filter((u) => u.role.toLowerCase() === 'student');
   constructor(
@@ -114,8 +116,17 @@ export class AdminEnrollement implements OnInit {
       }
       course.instructorName = instructor?.fullname || 'Unknown Instructor';
       // console.log(this.studentsWithCourses);
-
+       this.filteredUsers = this.studentsWithCourses;
     });
+  }
+  search() {
+    if(this.searchTerm === '') {
+      this.filteredUsers = this.studentsWithCourses;
+    }
+    this.filteredUsers = this.studentsWithCourses.filter((student) =>
+      student.studentName.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+    
   }
 
   getInitials(name: string): string {

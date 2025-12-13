@@ -68,26 +68,18 @@
   >
     <div class="input-group">
       <span class="input-group-text bg-white border-end-0">
-        <img src="assets/images/search.svg" alt="search" />
+        <img src="assets/images/search.svg" alt="search" (click)="search()" />
       </span>
 
       <input
         class="form-control border-start-0"
         type="search"
+        [(ngModel)]="searchTerm"
         placeholder="Search by student or course"
         aria-label="Search"
       />
     </div>
-    <div class="dropdown flex-grow-1">
-      <button class="btn dropdown-toggle custom-btn w-100" type="button" data-bs-toggle="dropdown">
-        All Enrollments
-      </button>
-      <!-- <ul class="dropdown-menu custom-menu w-100">
-        <li><a class="dropdown-item" href="#"> All Roles</a></li>
-        <li><a class="dropdown-item" href="#">Instructors</a></li>
-        <li><a class="dropdown-item" href="#">Students</a></li>
-      </ul> -->
-    </div>
+    
   </div>
 
   <table class="table table-hover align-middle mt-4 custom-table">
@@ -100,7 +92,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let enroll of studentsWithCourses">
+      <tr *ngFor="let enroll of filteredUsers">
         <td>
           <div class="d-flex align-items-center gap-2">
            <div class="avatar">

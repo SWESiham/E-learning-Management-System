@@ -26,7 +26,7 @@
     },
     {
       "id": "1bc7",
-      "fullname": "AhmedKhaled",
+      "fullname": "Dr.AhmedKhaled",
       "email": "Ahmed@12.com",
       "password": "12345678",
       "role": "Instructor",
@@ -44,7 +44,7 @@
   "courses": [
     {
       "id": "0e70",
-      "title": "Python",
+      "title": "Python advanced",
       "description": "Python is\na high-level, general-purpose programming language known for its clear, readable syntax that emphasizes simplicity and ease of use. Created by Guido van Rossum in 1991, it is used across a wide variety of domains, from web development to artificial intelligence. ",
       "authorName": "AhmedKhaled",
       "authorId": "1bc7",

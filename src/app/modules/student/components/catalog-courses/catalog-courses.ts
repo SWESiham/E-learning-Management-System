@@ -4,7 +4,7 @@ import { ApiCourse } from '../../../../core/services/api-course';
 import { categories } from '../../../../core/models/categories';
 
 @Component({
-  selector: 'app-catalog-courses',
+  selector: 'app-catalog-courses-student',
   standalone: false,
   templateUrl: './catalog-courses.html',
   styleUrl: './catalog-courses.css',

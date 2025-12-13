@@ -14,7 +14,7 @@
       "email": "toka@123.com",
       "password": "12345678",
       "role": "Student",
-      "isActive": true
+      "isActive": false
     },
     {
       "id": "b435",
@@ -89,7 +89,8 @@
           }
         ]
       },
-      "assignments": []
+      "assignments": [],
+      "isArchived": false
     },
     {
       "id": "6e78",
@@ -137,7 +138,8 @@
             "link": "https://drive.google.com/file/d/14_no3-fZr7WuHSZBvD1hBWzepC3ewxmq/view?usp=drive_link"
           }
         ]
-      }
+      },
+      "isArchived": true
     },
     {
       "id": "ac00",
@@ -222,7 +224,8 @@
             "link": "https://drive.google.com/file/d/1qyT__ZGEmn5W4hJo7jxHY8PtecYvBeRP/view?usp=drive_link"
           }
         ]
-      }
+      },
+      "isArchived": false
     }
   ],
   "enrollments": [
@@ -230,27 +233,36 @@
       "id": "00c0",
       "studentId": "ba9f",
       "courseId": "0e70",
-      "progress": 0,
+      "progress": 30,
       "enrollmentDate": "2021-11-10"
     },
     {
       "id": "60e8",
       "studentId": "ba9f",
       "courseId": "ac00",
-      "progress": 0
+      "progress": 0,
+      "enrollmentDate": "2025-12-12"
     },
     {
       "id": "4dfd",
       "studentId": "ba9f",
       "courseId": "6e78",
-      "progress": 0
+      "progress": 0,
+      "enrollmentDate": "2025-12-13"
     },
     {
-      "id": "ede9",
+      "id": "ea4c",
       "studentId": "b435",
-      "courseId": "ac00",
+      "courseId": "f567",
       "progress": 0,
-      "enrollmentDate": "2025-12-12"
+      "enrollmentDate": "2025-12-13"
+    },
+    {
+      "id": "45bd",
+      "studentId": "ba9f",
+      "courseId": "0e70",
+      "progress": 0,
+      "enrollmentDate": "2025-12-13"
     }
   ],
   "submissions": [

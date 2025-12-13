@@ -28,8 +28,12 @@ export class MyCourses implements OnInit {
     this._studentService.getStudeEnrollments(this.userId).subscribe((res) => {
       this.enrollments = res as any[];
       console.log(this.enrollments);
+       this.courses = [];
+       
       this.enrollments.forEach(enrollment => {
         this._studentService.getCourseById(enrollment.courseId).subscribe((courseRes) => {
+
+      if ((courseRes as any).isArchived) return;
           const combinedData = {
             ...courseRes,
             progress: enrollment.progress,

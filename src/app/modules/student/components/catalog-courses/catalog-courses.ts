@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Auth } from '../../../../core/services/auth';
 import { ApiCourse } from '../../../../core/services/api-course';
 import { categories } from '../../../../core/models/categories';
@@ -17,23 +17,25 @@ export class CatalogCourses {
   enrolled: boolean = false;
   constructor(private _auth: Auth, private _apiCourse: ApiCourse) { }
   courses: any[] = []
+  @Input()isAdmin: boolean = false;
   ngOnInit(): void {
     this._apiCourse.getCourses().subscribe((res: any) => {
       this.courses = res;
+      this.courses = this.filterArchived(res);
       console.log("this.courses", this.courses);
-    const user = this._auth.getUserPayload();
-      if (user && user.id) {
-        this._apiCourse.getEnrollmentsByUserId(user.id).subscribe((enrollments: any) => {
+    // const user = this._auth.getUserPayload();
+    //   if (user && user.id) {
+    //     this._apiCourse.getEnrollmentsByUserId(user.id).subscribe((enrollments: any) => {
           
-          this.courses.forEach(course => {
+    //       this.courses.forEach(course => {
       
-            const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
+    //         const isEnrolled = enrollments.some((e: any) => e.courseId === course.id);
            
-            course.isEnrolled = isEnrolled; 
-          });
+    //         course.isEnrolled = isEnrolled; 
+    //       });
 
-        });
-      }
+    //     });
+    //   }
     
     })
   }
@@ -46,17 +48,19 @@ export class CatalogCourses {
     if (category === 'All') this.ngOnInit();
     else {
       this._apiCourse.getCoursesByCategory(category).subscribe((res: any) => {
-        this.courses = res;
+        this.courses = this.filterArchived(res);
         console.log("this.courses", this.courses);
-
       })
     }
   }
   searchCourses() {
     this._apiCourse.getCourses().subscribe((res: any) => {
-      this.courses = res.filter((course: any) => course.title.toLowerCase().includes(this.searchCourse.toLowerCase()));
-      console.log("this.courses", this.courses);
+      const filtered = res.filter((course: any) =>
+      course.title.toLowerCase().includes(this.searchCourse.toLowerCase())
+    );
+    this.courses = this.filterArchived(filtered);
     })
+
   }
   enrollNow(courseId: string, event: Event) {
     event.stopPropagation();
@@ -66,7 +70,8 @@ export class CatalogCourses {
     const enrollmentData = {
       studentId: studentId,
       courseId: courseId,
-      progress: 0
+      progress: 0,
+      enrollmentDate: new Date().toISOString().split('T')[0]
     }
     this._apiCourse.enrollInCourse(enrollmentData).subscribe({
       next: (res) => {
@@ -81,4 +86,16 @@ export class CatalogCourses {
       }
     });
   }
+
+  deleteCourse(id:string){ 
+  this._apiCourse.deleteCourse(id).subscribe(() => {
+    this.courses = this.courses.filter(c => c.id !== id);
+  });
+  }
+
+  filterArchived(courses: any[]) {
+  if (this.isAdmin) return courses;
+  return courses.filter(c => !c.isArchived);
+}
+
 }
